@@ -1,0 +1,102 @@
+<div class="rectangleBox" style="width: 1200px">
+
+   <table border="0" width="100%">
+      <tr>
+         <td>
+            <h4 i18n="@@mentorSkillTitle">Mentor's Skill(s)</h4>
+         </td>
+      </tr>
+
+      <tr>
+         <td style="vertical-align: top">
+
+            <app-pagination [pagination]="pagination" (pageChange)='pageChanged($event)'></app-pagination>
+
+            <form id="form1" name="form1">
+               <table align="left" class="grid-box">
+                  <tr align="center">
+                     <th style="width: 80px" i18n="@@skillName">Skill Name</th>
+                     <th style="width: 110px" i18n="@@selfRating">Self Rating</th>
+                     <th style="width: 110px" i18n="@@mentorTotExp">Total Experience</th>
+                     <th style="width: 210px" i18n="@@mentorTrnDel">Tarinings Delivered</th>
+                     <th style="width: 140px" i18n="@@faclityOffered">Facilities Offered</th>
+                     <th style="width: 100px" i18n="@@fees">Fees</th>
+                     <th style="width: 100px"></th>
+                  </tr>
+                  <tr style="vertical-align: top;">
+                     <td>
+                        <input type="hidden" name="mentorId" [(ngModel)]="mentorSkill.mentorId" #mentorId="ngModel">
+                        <input type="hidden" name="skillId" id="skillId" [(ngModel)]="mentorSkill.skillId" #skillId="ngModel">
+                        <input type="text" name="skillName" id="skillName" i18n-placeholder placeholder="Skill Name"
+                        class="requiredfield" [(ngModel)]="mentorSkill.skillName" #skillName="ngModel"/>
+                        <br><span class="blankfield"></span>
+                     </td>
+                     <td>
+                        <bar-rating [max]="5" [titles]="['Poor', 'Average', 'Good', 'Very Good', 'Excellent']"
+                           [showText]="true" id="selfRating" name="selfRating" [(ngModel)]="mentorSkill.selfRating"
+                           #selfRating="ngModel" class="requiredfield">
+                        </bar-rating>
+                        <br><span class="blankfield"></span>
+                     </td>
+                     <td>
+                        <input type="text" i18n-placeholder placeholder="Years of Experience" name="yearsOfExperience"
+                           [(ngModel)]="mentorSkill.yearsOfExperience" #yearsOfExperience="ngModel"
+                           class="requiredfield"
+                           onKeyUp="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
+                        <br><span class="blankfield"></span>
+                     </td>
+                     <td>&nbsp;</td>
+                     <td>
+                        <textarea i18n-placeholder placeholder="Facilities Offered" name="facilitiesOffered" rows="6"
+                           cols="30" [(ngModel)]="mentorSkill.facilitiesOffered" #facilitiesOffered="ngModel"
+                           class="requiredfield" style="resize:none"></textarea>
+                        <br><span class="blankfield"></span>
+                     </td>
+                     <td>
+                        <input type="text" i18n-placeholder placeholder="Fees" name="fees"
+                           [(ngModel)]="mentorSkill.fees" #fees="ngModel" class="requiredfield">
+                        <br><span class="blankfield"></span>
+                     </td>
+                     <td align="center">
+                        <mat-icon (click)="addMentorSkill()" i18n-title title="Add Record" id="addButton"
+                           [ngStyle]="{'color':'green'}">add</mat-icon>
+                        <mat-icon (click)="updateMentorSkill()" i18n-title title="Save Record" id="saveButton"
+                           style="display: none;" [ngStyle]="{'color':'green'}">save</mat-icon>
+                        &nbsp;&nbsp;
+                        <mat-icon (click)="clearFields()" i18n-title title="Cancel Edit" id="cancelEditButton"
+                           style="display: none;" [ngStyle]="{'color':'red'}">clear</mat-icon>
+                     </td>
+                  </tr>
+                  <tr *ngFor="let item of pagination?.content; let index = index" [ngClass]="{'alternate': 0 === index % 2}">
+                     <td>{{item.skillName}}</td>
+                     <td>
+                        <bar-rating [(rate)]="item.selfRating" [max]="5"
+                           [titles]="['Poor', 'Average', 'Good', 'Very Good', 'Excellent']" [showText]="true"
+                           [readOnly]="true">
+                        </bar-rating>
+                     </td>
+                     <td>{{item.yearsOfExperience}} Year(s)</td>
+                     <td>{{item.tariningsDelivered}}</td>
+                     <td>{{item.facilitiesOffered}}</td>
+                     <td>{{item.fees}}</td>
+                     <td align="center">
+                        <mat-icon (click)="setValueForUpdate(index)" i18n-title title="Edit Record"
+                           [ngStyle]="{'color':'green'}">edit</mat-icon>
+                        &nbsp;&nbsp;
+                        <mat-icon (click)="deleteMentorSkill(item.id)" i18n-title title="Delete Record"
+                           [ngStyle]="{'color':'red'}">delete</mat-icon>
+                     </td>
+                  </tr>
+                  <tr *ngIf="pagination?.content.length == 0">
+                     <td style="text-align: center" colspan="7" i18n="@@noData"><b>No Data found</b></td>
+                  </tr>
+               </table>
+            </form>
+
+         </td>
+      </tr>
+   </table>
+
+</div>
+
+<div class="wait" id="wait"></div>

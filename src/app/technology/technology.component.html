@@ -1,0 +1,73 @@
+<div class="rectangleBox" style="width: 770px">
+
+   <table border="0" width="100%">
+      <tr>
+         <td>
+            <h4 i18n="@@techMgmtTitle">Technology Management</h4>
+         </td>
+      </tr>
+      <tr>
+         <td style="vertical-align: top">
+
+            <app-pagination [pagination]="pagination" (pageChange)='pageChanged($event)'></app-pagination>
+
+            <form id="form1" name="form1">
+               <table align="left" class="grid-box">
+                  <tr align="center">
+                     <th style="width: 120px" i18n="@@technology">Technology</th>
+                     <th style="width: 235px" i18n="@@toc">Table of Content</th>
+                     <th style="width: 235px" i18n="@@prereq">Prerequisites</th>
+                     <th style="width: 120px"></th>
+                  </tr>
+                  <tr>
+                     <td style="vertical-align: top;">
+                        <input type="text" i18n-placeholder placeholder="Technology" name="name" id="name"
+                           [(ngModel)]="skill.name" #name="ngModel" class="requiredfield">
+                        <br><span class="blankfield"></span>
+                     </td>
+                     <td>
+                        <textarea i18n-placeholder placeholder="Table of Content" name="toc" rows="6" cols="30"
+                           [(ngModel)]="skill.toc" #toc="ngModel" class="requiredfield" style="resize:none"></textarea>
+                        <br><span class="blankfield"></span>
+                     </td>
+                     <td>
+                        <textarea i18n-placeholder placeholder="Prerequisites" name="prerequisites" rows="6" cols="30"
+                           [(ngModel)]="skill.prerequisites" #prerequisites="ngModel" class="requiredfield"
+                           style="resize:none"></textarea>
+                        <br><span class="blankfield"></span>
+                     </td>
+                     <td align="center" style="vertical-align: top;">
+                        <mat-icon (click)="addSkill()" i18n-title title="Add Record" id="addButton"
+                           [ngStyle]="{'color':'green'}">add</mat-icon>
+                        <mat-icon (click)="updateSkill()" i18n-title title="Save Record" id="saveButton"
+                           style="display: none;" [ngStyle]="{'color':'green'}">save</mat-icon>
+                        &nbsp;&nbsp;
+                        <mat-icon (click)="clearFields()" i18n-title title="Cancel Edit" id="cancelEditButton"
+                           style="display: none;" [ngStyle]="{'color':'red'}">clear</mat-icon>
+                     </td>
+                  </tr>
+                  <tr *ngFor="let item of pagination?.content; let index = index"
+                     [ngClass]="{'alternate': 0 === index % 2}">
+                     <td>{{item.name}}</td>
+                     <td>{{item.toc}}</td>
+                     <td>{{item.prerequisites}}</td>
+                     <td align="center">
+                        <mat-icon (click)="setValueForUpdate(index)" i18n-title title="Edit Record"
+                           [ngStyle]="{'color':'green'}">edit</mat-icon>
+                        &nbsp;&nbsp;
+                        <mat-icon (click)="deleteSkill(item.id)" i18n-title title="Delete Record"
+                           [ngStyle]="{'color':'red'}">delete</mat-icon>
+                     </td>
+                  </tr>
+                  <tr *ngIf="pagination?.content.length == 0">
+                     <td style="text-align: center" colspan="4" i18n="@@noData"><b>No Data found</b></td>
+                  </tr>
+               </table>
+            </form>
+
+         </td>
+      </tr>
+   </table>
+</div>
+
+<div class="wait" id="wait"></div>

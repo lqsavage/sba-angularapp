@@ -1,0 +1,14 @@
+Step 1: build angular application
+        ng build
+
+Step 2: Keep dockerfile, _htaccess & httpd.conf files in dist direcory which was created in Step 2.
+
+Step 3: Create an Image using below command
+        cd dist
+        docker build -t sba .
+
+Step 4: Once image being created, create container & start it, using below command
+        docker run -dit --name skill-based-assignment -p 8084:80 sba
+
+Step 5: Open chrome browser and paste below link to check
+        http://localhost:8084/

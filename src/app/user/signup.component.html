@@ -1,0 +1,151 @@
+<table align="center" style="width: 700px">
+   <tr>
+      <td>
+
+         <div class="rectangleBox" style="width: 700px">
+            <form id="form1" name="form1">
+
+               <table>
+                  <tr>
+                     <td colspan="2">
+                        <h4>{{pageTitle || translate}}</h4>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td width="120px" align="right">
+                        <label i18n="@@userNameColon">User Name :&nbsp;</label>
+                     </td>
+                     <td width="500px" *ngIf="logedUser == null">
+                        <input name="userName" id="userName" i18n-placeholder placeholder="User Name"
+                           class="requiredfield" type="text" maxlength="50" [(ngModel)]="user.userName"
+                           #userName="ngModel">
+                        &nbsp;&nbsp;<span class="blankfield"></span>
+                     </td>
+                     <td width="500px" *ngIf="logedUser != null">
+                        <input name="userName" id="userName" maxlength="50" readonly="readonly"
+                           [(ngModel)]="user.userName" #userName="ngModel" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td align="right">
+                        <label i18n="@@passwordColon">
+                           Password :&nbsp;
+                        </label></td>
+                     <td>
+                        <input name="password" id="password" i18n-placeholder placeholder="Password"
+                           class="requiredfield password" type="password" maxlength="25" [(ngModel)]="user.password"
+                           #password="ngModel">
+                     </td>
+                  </tr>
+                  <tr>
+                     <td align="right">
+                        <label i18n="@@confPasswdColon">
+                           Confirm Password :&nbsp;
+                        </label></td>
+                     <td>
+                        <input name="repassword" id="repassword" i18n-placeholder placeholder="Confirm Password"
+                           class="requiredfield" type="password" maxlength="25">
+                        &nbsp;&nbsp;<span class="blankfield"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td align="right"><label i18n="@@firstNameColon">
+                           First Name :&nbsp;
+                        </label></td>
+                     <td>
+                        <input name="firstName" id="firstName" i18n-placeholder placeholder="First Name"
+                           class="requiredfield" type="text" maxlength="25" [(ngModel)]="user.firstName"
+                           #firstName="ngModel">
+                        &nbsp;&nbsp;<span class="blankfield"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td align="right"><label i18n="@@lastNameColon">
+                           Last Name :&nbsp;
+                        </label></td>
+                     <td>
+                        <input name="lastName" id="lastName" i18n-placeholder placeholder="Last Name"
+                           class="requiredfield" type="text" maxlength="25" [(ngModel)]="user.lastName"
+                           #lastName="ngModel">
+                        &nbsp;&nbsp;<span class="blankfield"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td align="right"><label i18n="@@contactNoColon">
+                           Contact Number :&nbsp;
+                        </label></td>
+                     <td>
+                        <input name="contactNumber" id="contactNumber" i18n-placeholder placeholder="Contact Number"
+                           class="requiredfield" maxlength="10" type="text" [(ngModel)]="user.contactNumber"
+                           #contactNumber="ngModel">
+                        &nbsp;&nbsp;<span class="blankfield"></span>
+                     </td>
+                  </tr>
+                  <tr *ngIf="user != null && user.role =='MENTOR'">
+                     <td align="right"><label i18n="@@linkedinURLColon">
+                           Linkedin URL :&nbsp;
+                        </label></td>
+                     <td>
+                        <input name="linkedinUrl" id="linkedinUrl" i18n-placeholder placeholder="Linkedin URL"
+                           class="requiredfield" type="text" [(ngModel)]="user.linkedinUrl" #linkedinUrl="ngModel">
+                        &nbsp;&nbsp;<span class="blankfield"></span>
+                     </td>
+                  </tr>
+                  <tr *ngIf="user != null && user.role =='MENTOR'">
+                     <td align="right"><label i18n="@@yoeColon">
+                           Years of Experience :&nbsp;
+                        </label></td>
+                     <td>
+                        <input name="yearsOfExperience" id="yearsOfExperience" i18n-placeholder
+                           placeholder="Years of Experience" class="requiredfield" type="text"
+                           [(ngModel)]="user.yearsOfExperience" #yearsOfExperience="ngModel">
+                        &nbsp;&nbsp;<span class="blankfield"></span>
+                     </td>
+                  </tr>
+                  <tr *ngIf="logedUser == null">
+                     <td align="right"><label i18n="@@userTypeColon">User Type :&nbsp;</label></td>
+                     <td>
+                        <select i18n="@@userTypeList" name="role" id="role" [(ngModel)]="user.role" #role="ngModel"
+                           class="requiredfield">
+                           <option value="" selected>User Type</option>
+                           <option value="MENTOR">Mentor</option>
+                           <option value="USER">User</option>
+                        </select>
+                        &nbsp;&nbsp;<span class="blankfield"></span>
+                     </td>
+                  </tr>
+                  <tr *ngIf="logedUser == null">
+                     <td>&nbsp;</td>
+                     <td>
+                        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" (reset)="handleReset()"
+                           (expire)="handleExpire()" (load)="handleLoad()" (success)="handleSuccess($event)"
+                           [size]="size" [hl]="lang" [theme]="theme" [type]="type" [(ngModel)]="reCaptcha"
+                           #captchaElem="ngModel" [ngModelOptions]="{standalone: true}">
+                        </ngx-recaptcha2>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td style="height: 50px;" *ngIf="logedUser == null">
+                        <mat-icon (click)="signup()" i18n-title title="Sign Up" [ngStyle]="{'color':'green'}">save
+                        </mat-icon>
+                        &nbsp;&nbsp;
+                        <mat-icon (click)="clearFields()" i18n-title title="Clear Field(s)" [ngStyle]="{'color':'red'}">
+                           clear</mat-icon>
+                     </td>
+                     <td style="height: 50px;" *ngIf="logedUser != null">
+                        <mat-icon (click)="updateProfile()" i18n-title title="Update Profile"
+                           [ngStyle]="{'color':'green'}">edit
+                        </mat-icon>
+                     </td>
+                  </tr>
+               </table>
+
+            </form>
+         </div>
+
+      </td>
+   </tr>
+</table>
+
+<div class="wait" id="wait"></div>

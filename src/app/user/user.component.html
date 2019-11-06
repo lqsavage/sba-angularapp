@@ -1,0 +1,62 @@
+<div class="rectangleBox" style="width: 1300px">
+
+    <table border="0" width="100%">
+        <tr>
+            <td>
+                <h4 i18n="@@userMgmtTitle">User Management</h4>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top">
+
+                <app-pagination [pagination]="pagination" (pageChange)='pageChanged($event)'></app-pagination>
+
+                <table align="left" class="grid-box">
+                    <tr align="center">
+                        <th style="width:130px" i18n="@@userName">User Name</th>
+                        <th style="width:100px" i18n="@@firstName">First Name</th>
+                        <th style="width:100px" i18n="@@lastName">Last Name</th>
+                        <th style="width:120px" i18n="@@contactNo">Contact Number</th>
+                        <th style="width:100px" i18n="@@userType">User Type</th>
+                        <th style="width:100px" i18n="@@linkedinURL">Linkedin Url</th>
+                        <th style="width:160px" i18n="@@yoe">Years Of Experience</th>
+                        <th style="width:110px" i18n="@@userConfirmed">User Confirmed</th>
+                        <th style="width:130px" i18n="@@resetPasswd">Reset Password</th>
+                        <th style="width:140px" i18n="@@bunbUser">Block/Unblock User</th>
+                    </tr>
+                    <tr *ngFor="let item of pagination?.content; let index = index"
+                        [ngClass]="{'alternate': 0 === index % 2}">
+                        <td>{{item.userName}}</td>
+                        <td>{{item.firstName}}</td>
+                        <td>{{item.lastName}}</td>
+                        <td>{{item.contactNumber}}</td>
+                        <td>{{item.role}}</td>
+                        <td>{{item.linkedinUrl}}</td>
+                        <td align="center">{{item.yearsOfExperience}}</td>
+                        <td align="center">
+                            <mat-icon *ngIf="item.confirmedSignUp" [ngStyle]="{'color':'green'}">check</mat-icon>
+                            <mat-icon *ngIf="!item.confirmedSignUp" [ngStyle]="{'color':'red'}">close</mat-icon>
+                        </td>
+                        <td align="center">
+                            <mat-icon *ngIf="item.resetPassword" [ngStyle]="{'color':'green'}">check</mat-icon>
+                            <mat-icon *ngIf="!item.resetPassword" [ngStyle]="{'color':'red'}">close</mat-icon>
+                        </td>
+                        <td align="center">
+                            <mat-icon *ngIf="item.active" (click)="blockunblockUser(item.id, false)" i18n-title
+                                title="Block" [ngStyle]="{'color':'green'}">close</mat-icon>
+                            <mat-icon *ngIf="!item.active" (click)="blockunblockUser(item.id, true)" i18n-title
+                                title="Un-Block" [ngStyle]="{'color':'red'}">block</mat-icon>
+                        </td>
+                    </tr>
+                    <tr *ngIf="pagination?.content.length == 0">
+                        <td style="text-align: center" colspan="10" i18n="@@noData"><b>No Data found</b></td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="wait" id="wait"></div>

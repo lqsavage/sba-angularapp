@@ -1,0 +1,173 @@
+<div class="rectangleBox" style="width: 740px" *ngIf="logedUser == null || (logedUser !=null && logedUser.role.includes('ROLE_USER'))">
+   <form id="form1" name="form1">
+      <table border="0">
+         <tr>
+            <td colspan="6">
+               <h4 i18n="@@mentorSearchTitle">Search For Mentor</h4>
+            </td>
+         </tr>
+         <tr style="vertical-align: top; height: 35px">
+            <td colspan="3" width="350px">
+               <input type="text" name="skillName" id="skillName" i18n-placeholder placeholder="Technology Name"
+                  style="width: 300px; height: 31px;" class="requiredfield" [(ngModel)]="training.skillName" #skillName="ngModel">
+               <input type="hidden" name="skillId" id="skillId" [(ngModel)]="training.skillId" #skillId="ngModel">
+               <br><span class="blankfield"></span>
+            </td>
+            <td colspan="3" width="355px">
+               <input name="search_btn" id="search_btn" class="search_btn" i18n-title title="Search Mentor" type="button"
+                  (click)="findMentorByTechnology(0)">
+            </td>
+         </tr>
+         <tr style="height: 35px">
+            <td width="100px" style="vertical-align: middle;" i18n="@@From&ToDate">From & To Date</td>
+            <td width="135px">
+               <input name="startDate" id="startDate" type="text" style="width: 90px" readonly="true"
+                  class="requiredfield" [(ngModel)]="training.startDate" #startDate="ngModel"/>
+               <br><span class="blankfield"></span>
+            </td>
+            <td width="135px">
+               <input name="endDate" id="endDate" type="text" style="width: 90px" readonly="true"
+                  class="requiredfield" [(ngModel)]="training.endDate" #endDate="ngModel"/>
+               <br><span class="blankfield"></span>
+            </td>
+            <td width="100px" style="vertical-align: middle;" i18n="@@From&ToTime">From & To Time</td>
+            <td width="135px">
+               <select name="startTime" id="startTime" style="width: 90px" class="requiredfield" [(ngModel)]="training.startTime" #startTime="ngModel">
+                  <option value="" selected="selected" i18n="@@select">Select</option>
+               </select>
+               <br><span class="blankfield"></span>
+            </td>
+            <td width="135px">
+               <select name="endTime" id="endTime" style="width: 90px" class="requiredfield" [(ngModel)]="training.endTime" #endTime="ngModel">
+                  <option value="" selected="selected" i18n="@@select">Select</option>
+               </select>
+               <br><span class="blankfield"></span>
+            </td>
+         </tr>
+      </table>
+   </form>
+</div>
+
+<br>
+
+<div class="rectangleBox" style="width: 940px" *ngIf="searchClicked == true">
+   <table border="0" width="100%">
+      <tr>
+         <td>
+            <h4 i18n="@@mentorList">Mentor List</h4>
+         </td>
+      </tr>
+      <tr>
+         <td style="vertical-align: top">
+
+            <app-pagination [pagination]="pagination" (pageChange)='pageChanged($event)'></app-pagination>
+
+            <table border="0" class="grid-box">
+               <tr>
+                  <th style="width: 120px" i18n="@@mentorName">Mentor Name</th>
+                  <th style="width: 120px" i18n="@@mentorAvgRating">Average Rating</th>
+                  <th style="width: 120px" i18n="@@mentorTotExp">Total Experience</th>
+                  <th style="width: 150px" i18n="@@mentorTrnDel">Tarinings Delivered</th>
+                  <th style="width: 150px" i18n="@@faclityOffered">Facilities Offered</th>
+                  <th style="width: 80px" i18n="@@fees">Fees</th>
+                  <th style="width: 100px"></th>
+                  <th style="width: 100px"></th>
+               </tr>
+               <tr *ngFor="let item of pagination?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td><a i18n-title title="View Profile" (click)="viewProfile(item.mentorId)">{{item.mentorName}}</a></td>
+                  <td>
+                     <bar-rating [(rate)]="item.avgRating" [readOnly]="true"></bar-rating>
+                  </td>
+                  <td>{{item.yearsOfExperience}} Year(s)</td>
+                  <td>{{item.tariningsDelivered}}</td>
+                  <td>{{item.facilitiesOffered}}</td>
+                  <td>{{item.fees}}</td>
+                  <td>
+                     <a i18n-title title="Training History" (click)="viewTrainingHistory(item.mentorId)" i18n="@@trainingHist">Training History</a>
+                  </td>
+                  <td>
+                     <a i18n-title title="Send Proposal" (click)="proposeTraining(item.mentorId,item.skillId,item.fees)" i18n="@@sendPropose">Send Proposal</a>
+                  </td>
+               </tr>
+               <tr *ngIf="pagination?.content.length == 0">
+                  <td style="text-align: center" colspan="8" i18n="@@noData"><b>No Data found</b></td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+</div>
+
+<div id="ViewProfileDiv" class="modal fade">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" i18n-title title="Close">&times;</button>
+            <h3 class="modal-title" i18n="@@viewMentProfTitle">View Mentor Profile</h3>
+         </div>
+         <div class="modal-body">
+            <table border="0" class="grid-box" *ngIf="mentor">
+               <tr>
+                  <th style="width: 140px; height:24px; text-align: right" i18n="@@firstName">First Name &nbsp;</th>
+                  <td style="width: 140px">{{mentor.firstName}}</td>
+                  <th style="width: 130px; text-align: right" i18n="@@lastName">Last Name &nbsp;</th>
+                  <td style="width: 130px">{{mentor.lastName}}</td>
+               </tr>
+               <tr>
+                  <th style="height:24px; text-align: right" i18n="@@contactNo">Contact Number &nbsp;</th>
+                  <td colspan="3">{{mentor.contactNumber}}</td>
+               </tr>
+               <tr>
+                  <th style="height:24px; text-align: right" i18n="@@linkedinURL">Linkedin URL &nbsp;</th>
+                  <td colspan="3">{{mentor.linkedinUrl}}</td>
+               </tr>
+               <tr>
+                  <th style="height:24px; text-align: right" i18n="@@mentorTotExp">Total Experience &nbsp;</th>
+                  <td colspan="3">{{mentor.yearsOfExperience}}</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div id="TrainingHistoryDiv" class="modal fade">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" i18n-title title="Close">&times;</button>
+            <h3 class="modal-title" i18n="@@trainingHist">Training History</h3>
+         </div>
+         <div class="modal-body" style="height: 400px;">
+
+            <app-pagination [pagination]="paginationTraining" (pageChange)='pageChangedTraining($event)'></app-pagination>
+
+            <table align="left" class="grid-box" width="100%">
+               <tr align="center">
+                  <th style="width: 100px" i18n="@@traineeName">Trainee Name</th>
+                  <th style="width: 110px" i18n="@@fromDate&Time">From Date & Time</th>
+                  <th style="width: 110px" i18n="@@toDate&Time">To Date & Time</th>
+                  <th style="width: 110px;" i18n="@@rating">Rating</th>
+               </tr>
+               <tr *ngFor="let item of paginationTraining?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td>{{item.userName}}</td>
+                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>
+                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>
+                  <td>
+                     <bar-rating [(rate)]="item.rating" [max]="5"
+                        [titles]="['Poor', 'Average', 'Good', 'Very Good', 'Excellent']" [showText]="true"
+                        [readOnly]="true"></bar-rating>
+                  </td>
+               </tr>
+               <tr *ngIf="paginationTraining?.content.length == 0">
+                  <td align="center" colspan="5" i18n="@@noData"><b>No Data found</b></td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="wait" id="wait"></div>

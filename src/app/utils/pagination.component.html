@@ -1,0 +1,18 @@
+<nav *ngIf="pagination?.content.length > 0">
+   <ul class="pagination">
+      <li [class.disabled]="pagination?.first" class="page-item">
+         <a class="page-link" (click)="onSelect(0)">First</a>
+      </li>
+      <ng-container *ngFor="let page of ' '.repeat(pagination.totalPages).split(''), let i = index ">
+         <li *ngIf="i>=1 && i<=10 && i<pagination?.totalPages-1" [class.active]="i === selectedPage" class="page-item">
+            <a class="page-link" (click)="onSelect(i)">{{i}}</a>
+         </li>
+         <li *ngIf="i>10 && i<pagination?.totalPages-1" [class.active]="i === selectedPage" class="page-item">
+            <a class="page-link" (click)="onSelect(i)">Next</a>
+         </li>
+      </ng-container>
+      <li [class.disabled]="pagination?.last" class="page-item">
+         <a class="page-link" (click)="onSelect(pagination?.totalPages-1)">Last</a>
+      </li>
+   </ul>
+</nav>

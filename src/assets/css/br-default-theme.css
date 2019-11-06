@@ -1,0 +1,28 @@
+.br[_ngcontent-c1] {
+    position: relative;
+    margin: 0px 0 !important;
+}
+.br-default .br-units{
+    align-items:left;  
+}
+.br-default .br-unit{
+    font-size: 1.9rem;      
+}
+.br-default .br-unit:after{
+    content:"\2605";
+    color:#fccccc
+}
+.br-default .br-selected:after{
+    color:#EDB867
+}
+.br-default .br-active:after{
+    color:#EDB867
+}
+.br-default .br-text{    
+    display:block; 
+    font-size:11px;
+    clear:both;
+    text-align:left;
+    font-weight:600;
+    color:#000000
+}

@@ -1,0 +1,30 @@
+<div class="rectangleBox" style="width: 1220px">
+
+   <table border="0" width="100%">
+      <tr>
+         <td>
+            <h4 i18n="@@mentorCalendarTitle">Mentor's Calendar</h4>
+         </td>
+      </tr>
+
+      <tr>
+         <td style="vertical-align: top">
+            <table border="0" style="width: 100%">
+               <tr>
+                  <td align="center">
+                     <div style="width: 1200px; height: 460px;" class="rectangleBox">
+                        <ng-fullcalendar id="ucCalendar" #ucCalendar [options]="calendarOptions"
+                           [eventsModel]="calendarEvents" (clickButton)="updateCalendarEvents($event.detail)">
+                        </ng-fullcalendar>
+                     </div>
+                  </td>
+               </tr>
+            </table>
+
+         </td>
+      </tr>
+   </table>
+
+</div>
+
+<div class="wait" id="wait"></div>

@@ -1,0 +1,256 @@
+<div class="rectangleBox">
+
+   <table border="0" width="100%">
+      <tr>
+         <td>
+            <h4>{{pageTitle || translate}}</h4>
+         </td>
+      </tr>
+      <tr>
+         <td>
+
+            <app-pagination [pagination]="pagination" (pageChange)='pageChanged($event)'></app-pagination>
+
+            <table align="left" class="grid-box" *ngIf="routePath == '/allTrainings'">
+               <tr align="center">
+                  <th style="width: 120px" i18n="@@traineeName">Trainee Name</th>
+                  <th style="width: 120px" i18n="@@mentorName">Mentor Name</th>
+                  <th style="width: 120px" i18n="@@technology">Technology</th>
+                  <th style="width: 130px" i18n="@@startDate&Time">Start Date & Time</th>
+                  <th style="width: 130px" i18n="@@endDate&Time">End Date & Time</th>
+                  <th style="width: 110px" i18n="@@trainingStatus">Training Status</th>
+                  <th style="width: 110px" i18n="@@progress">Progress</th>
+                  <th style="width: 110px" i18n="@@rating">Rating</th>
+                  <th style="width: 120px" i18n="@@amtRec">Amount Received</th>
+                  <th style="width: 100px" i18n="@@commission">Commission</th>
+               </tr>
+               <tr *ngFor="let item of pagination?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td>{{item.userName}}</td>
+                  <td>{{item.mentorName}}</td>
+                  <td>{{item.skillName}}</td>
+                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>
+                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>
+                  <td>{{item.status}}</td>
+                  <td>
+                     <bar-rating [(rate)]="item.progress" [max]="4" [theme]="'movie'"
+                        [titles]="['25%', '50%' , '75%', '100%']" [showText]="true" [readOnly]="true"></bar-rating>
+                  </td>
+                  <td>
+                     <bar-rating [(rate)]="item.rating" [max]="5"
+                        [titles]="['Poor', 'Average', 'Good', 'Very Good', 'Excellent']" [showText]="true"
+                        [readOnly]="true"></bar-rating>
+                  </td>
+                  <td>{{item.amountReceived}}</td>
+                  <td>{{item.commissionAmount}}</td>
+               </tr>
+               <tr *ngIf="pagination?.content.length == 0">
+                  <td align="center" colspan="10" i18n="@@noData"><b>No Data found</b></td>
+               </tr>
+            </table>
+
+
+            <table align="left" class="grid-box" *ngIf="routePath == '/receivedProposl'">
+               <tr align="center">
+                  <th style="width: 120px" i18n="@@traineeName">Trainee Name</th>
+                  <th style="width: 120px" i18n="@@technology">Technology</th>
+                  <th style="width: 130px" i18n="@@startDate&Time">Start Date & Time</th>
+                  <th style="width: 130px" i18n="@@endDate&Time">End Date & Time</th>
+                  <th style="width: 170px" i18n="@@appProposal">Accept/Reject Proposal</th>
+               </tr>
+               <tr *ngFor="let item of pagination?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td>{{item.userName}}</td>
+                  <td>{{item.skillName}}</td>
+                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>
+                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>
+                  <td align="center">
+                     <mat-icon (click)="approveTraining(index,'CONFIRMED')" i18n-title title="Accept"
+                        [ngStyle]="{'color':'green'}">check</mat-icon>
+                     &nbsp;&nbsp;
+                     <mat-icon (click)="approveTraining(index,'REJECTED')" i18n-title title="Reject"
+                        [ngStyle]="{'color':'red'}">close</mat-icon>
+                  </td>
+               </tr>
+               <tr *ngIf="pagination?.content.length == 0">
+                  <td align="center" colspan="5" i18n="@@noData"><b>No Data found</b></td>
+               </tr>
+            </table>
+
+
+            <table align="left" class="grid-box" *ngIf="routePath == '/finalizeProposal'">
+               <tr align="center">
+                  <th style="width: 120px" i18n="@@mentorName">Mentor Name</th>
+                  <th style="width: 120px" i18n="@@technology">Technology</th>
+                  <th style="width: 130px" i18n="@@startDate&Time">Start Date & Time</th>
+                  <th style="width: 130px" i18n="@@endDate&Time">End Date & Time</th>
+                  <th style="width: 110px" i18n="@@trainingStatus">Training Status</th>
+                  <th style="width: 150px" i18n="@@fees">Training Fees</th>
+                  <th style="width: 70px"></th>
+               </tr>
+               <tr *ngFor="let item of pagination?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td>{{item.mentorName}}</td>
+                  <td>{{item.skillName}}</td>
+                  <td>{{item.startDate}} {{item.startTime}}</td>
+                  <td>{{item.endDate}} {{item.endTime}}</td>
+                  <td>{{item.status}}</td>
+                  <td>{{item.fees}}</td>
+                  <td align="center" *ngIf="item.status == 'CONFIRMED' && item.amountReceived == 0">
+                     <mat-icon (click)="payFees(index)" i18n-title title="Pay Training Fees"
+                        [ngStyle]="{'color':'green'}">edit</mat-icon>
+                  </td>
+                  <td align="center" *ngIf="item.status == 'CONFIRMED' && item.amountReceived != 0" i18n="@@feesPaid">
+                     Fees Paid
+                  </td>
+                  <td *ngIf="item.status == 'REJECTED'"></td>
+               </tr>
+               <tr *ngIf="pagination?.content.length == 0">
+                  <td align="center" colspan="7" i18n="@@noData"><b>No Data found</b></td>
+               </tr>
+            </table>
+
+
+            <table align="left" class="grid-box" *ngIf="routePath == '/rateMentor'">
+               <tr align="center">
+                  <th style="width: 120px" i18n="@@mentorName">Mentor Name</th>
+                  <th style="width: 120px" i18n="@@technology">Technology</th>
+                  <th style="width: 130px" i18n="@@startDate&Time">Start Date & Time</th>
+                  <th style="width: 130px" i18n="@@endDate&Time">End Date & Time</th>
+                  <th style="width: 110px" i18n="@@feesPaid">Fees Paid</th>
+                  <th style="width: 110px" i18n="@@trainingStatus">Training Status</th>
+                  <th style="width: 110px" i18n="@@progress">Progress</th>
+                  <th style="width: 110px" i18n="@@postRating">Rating</th>
+                  <th style="width: 70px"></th>
+               </tr>
+               <tr *ngFor="let item of pagination?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td>{{item.mentorName}}</td>
+                  <td>{{item.skillName}}</td>
+                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>
+                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>
+                  <td>{{item.amountReceived}}</td>
+                  <td>{{item.status}}</td>
+                  <td>
+                     <bar-rating [(rate)]="item.progress" [max]="4" [theme]="'movie'"
+                        [titles]="['25%', '50%' , '75%', '100%']" [showText]="true" [readOnly]="true"></bar-rating>
+                  </td>
+                  <td>
+                     <bar-rating [(rate)]="item.rating" [max]="5"
+                        [titles]="['Poor', 'Average', 'Good', 'Very Good', 'Excellent']" [showText]="true"></bar-rating>
+                  </td>
+                  <td align="center">
+                     <mat-icon (click)="updateRating(index)" i18n-title title="Post Rating"
+                        [ngStyle]="{'color':'green'}">edit</mat-icon>
+                  </td>
+               </tr>
+               <tr *ngIf="pagination?.content.length == 0">
+                  <td align="center" colspan="9" i18n="@@noData"><b>No Data found</b></td>
+               </tr>
+            </table>
+
+
+            <table align="left" class="grid-box" *ngIf="routePath == '/updateTrainingStatus'">
+               <tr align="center">
+                  <th style="width: 120px" i18n="@@mentorName">Mentor Name</th>
+                  <th style="width: 120px" i18n="@@technology">Technology</th>
+                  <th style="width: 130px" i18n="@@startDate&Time">Start Date & Time</th>
+                  <th style="width: 130px" i18n="@@endDate&Time">End Date & Time</th>
+                  <th style="width: 110px" i18n="@@feesPaid">Fees Paid</th>
+                  <th style="width: 110px" i18n="@@progress">Progress</th>
+                  <th style="width: 110px" i18n="@@postRating">Rating</th>
+                  <th style="width: 110px" i18n="@@trainingStatus">Training Status</th>
+                  <th style="width: 70px"></th>
+               </tr>
+               <tr *ngFor="let item of pagination?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td>{{item.mentorName}}</td>
+                  <td>{{item.skillName}}</td>
+                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>
+                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>
+                  <td>{{item.amountReceived}}</td>
+                  <td>
+                     <bar-rating [(rate)]="item.progress" [max]="4" [theme]="'movie'"
+                        [titles]="['25%', '50%' , '75%', '100%']" [showText]="true" [readOnly]="true"></bar-rating>
+                  </td>
+                  <td style="width: 30px;">
+                     <bar-rating [(rate)]="item.rating" [max]="5"
+                        [titles]="['Poor', 'Average', 'Good', 'Very Good', 'Excellent']" [showText]="true"
+                        [readOnly]="true">
+                     </bar-rating>
+                  </td>
+                  <td>
+                     <select i18n="@@trainingStatusList" name="trainingStatus$index" id="trainingStatus$index"
+                        class="requiredfield" (change)="getTrainingStatus($event)">
+                        <option *ngFor="let trainingStatus of trainingStatusList"
+                           [selected]="trainingStatus.caption == item.status">
+                           {{trainingStatus.value}}
+                        </option>
+                     </select>
+                  </td>
+                  <td align="center">
+                     <mat-icon (click)="updateTrainingStatus(index)" i18n-title title="Update Training Status"
+                        [ngStyle]="{'color':'green'}">edit</mat-icon>
+                  </td>
+               </tr>
+               <tr *ngIf="pagination?.content.length == 0">
+                  <td align="center" colspan="9" i18n="@@noData"><b>No Data found</b></td>
+               </tr>
+            </table>
+
+
+            <table align="left" class="grid-box"
+               *ngIf="routePath == '/inprogressTraining' || routePath == '/completedTraining'">
+               <tr align="center">
+                  <th style="width: 120px" *ngIf="logedUser !=null && logedUser.role.includes('ROLE_MENTOR')">
+                     Trainee Name
+                  </th>
+                  <th style="width: 120px" *ngIf="logedUser !=null && logedUser.role.includes('ROLE_USER')">
+                     Mentor Name
+                  </th>
+                  <th style="width: 120px" i18n="@@technology">Technology</th>
+                  <th style="width: 130px" i18n="@@startDate&Time">Start Date & Time</th>
+                  <th style="width: 130px" i18n="@@endDate&Time">End Date & Time</th>
+                  <th style="width: 110px" i18n="@@trainingStatus">Training Status</th>
+                  <th style="width: 110px" i18n="@@progress">Progress</th>
+                  <th style="width: 110px" i18n="@@rating">Rating</th>
+                  <th style="width: 110px" i18n="@@feesPaid"
+                     *ngIf="logedUser !=null && logedUser.role.includes('ROLE_USER')">
+                     Fees Paid
+                  </th>
+               </tr>
+               <tr *ngFor="let item of pagination?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td *ngIf="logedUser !=null && logedUser.role.includes('ROLE_MENTOR')">{{item.userName}}</td>
+                  <td *ngIf="logedUser !=null && logedUser.role.includes('ROLE_USER')">{{item.mentorName}}</td>
+                  <td>{{item.skillName}}</td>
+                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>
+                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>
+                  <td>{{item.status}}</td>
+                  <td>
+                     <bar-rating [(rate)]="item.progress" [max]="4" [theme]="'movie'"
+                        [titles]="['25%', '50%' , '75%', '100%']" [showText]="true" [readOnly]="true">
+                     </bar-rating>
+                  </td>
+                  <td>
+                     <bar-rating [(rate)]="item.rating" [max]="5"
+                        [titles]="['Poor', 'Average', 'Good', 'Very Good', 'Excellent']" [showText]="true"
+                        [readOnly]="true"></bar-rating>
+                  </td>
+                  <td *ngIf="logedUser !=null && logedUser.role.includes('ROLE_USER')">{{item.amountReceived}}</td>
+               </tr>
+               <tr *ngIf="pagination?.content.length == 0">
+                  <td align="center" colspan="8" i18n="@@noData"
+                     *ngIf="logedUser !=null && logedUser.role.includes('ROLE_USER')"><b>No Data found</b></td>
+                  <td align="center" colspan="7" i18n="@@noData"
+                     *ngIf="logedUser !=null && logedUser.role.includes('ROLE_MENTOR')"><b>No Data found</b></td>
+               </tr>
+            </table>
+
+         </td>
+      </tr>
+   </table>
+
+</div>
+
+<div class="wait" id="wait"></div>

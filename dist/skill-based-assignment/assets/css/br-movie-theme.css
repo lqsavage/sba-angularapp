@@ -1,0 +1,22 @@
+.br-movie .br-unit{
+    margin-top: 5px !important; 
+    width:22px;
+    height:12px;
+    background-color:#bbcefb;
+    margin:1px
+}
+.br-movie .br-unit.br-active,.br-movie .br-unit.br-selected{
+    background-color:#4278F5;   
+}
+.br-movie.br-readonly .br-active,.br-movie.br-readonly .br-selected{  
+    background-color:#729bf8
+}
+.br-movie .br-text{   
+    margin-top: 2px;    
+    display:block; 
+    font-size:11px;
+    clear:both;
+    text-align:left;
+    font-weight:600;
+    color:#000000
+}

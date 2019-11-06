@@ -1,0 +1,46 @@
+<table align="center" style="width: 620px">
+   <tr>
+      <td>
+
+         <div class="rectangleBox" style="width: 620px">
+            <form id="form1" name="form1">
+
+               <table>
+                  <tr>
+                     <td colspan="2">
+                        <h4 i18n="@@pmtCommTitle">Payment Commission</h4>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td width="120px" align="right">
+                        <label i18n="@@existingComm">Existing Commission :&nbsp;</label>
+                     </td>
+                     <td width="500px"><b>{{commissionPercent}}%</b></td>
+                  </tr>
+                  <tr>
+                     <td align="right">
+                        <label i18n="@@newComm">New Commission :&nbsp;</label>
+                     </td>
+                     <td>
+                        <input type="text" name="newCommissionPercent" id="newCommissionPercent" i18n-placeholder
+                           placeholder="New Commission" class="requiredfield">%
+                        <span class="blankfield"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td style="height: 50px;">
+                        <mat-icon (click)="updateCommission()" i18n-title title="Update Commission"
+                           [ngStyle]="{'color':'green'}">edit</mat-icon>
+                     </td>
+                  </tr>
+               </table>
+
+            </form>
+         </div>
+
+      </td>
+   </tr>
+</table>
+
+<div class="wait" id="wait"></div>

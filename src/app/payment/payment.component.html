@@ -1,0 +1,83 @@
+<div class="rectangleBox" style="width: 600px">
+   <form id="form1" name="form1">
+      <table border="0" width="100%">
+         <tr>
+            <td colspan="6">
+               <h4 i18n="@@pmtMgmtTitle">Payment Management</h4>
+            </td>
+         </tr>
+         <tr style="height: 35px" style="vertical-align: top;">
+            <td width="90px" i18n="@@fromDate" align="right">From Date&nbsp;</td>
+            <td width="135px">
+               <input name="startDate" id="startDate" type="text" style="width: 90px" readonly="true"
+                  class="requiredfield" />
+               <br><span class="blankfield"></span>
+            </td>
+            <td width="90px" i18n="@@toDate" align="right">To Date&nbsp;</td>
+            <td width="135px">
+               <input name="endDate" id="endDate" type="text" style="width: 90px" readonly="true"
+                  class="requiredfield" />
+               <br><span class="blankfield"></span>
+            </td>
+            <td>
+               <mat-icon (click)="findPaymentDtls(0)" i18n-title title="Payment Details" [ngStyle]="{'color':'orange'}">
+                  search</mat-icon>
+            </td>
+         </tr>
+      </table>
+   </form>
+</div>
+
+<br>
+
+<div class="rectangleBox" *ngIf="searchClicked == true" style="width: 950px">
+
+   <table border="0" width="100%">
+      <tr>
+         <td>
+
+            <app-pagination [pagination]="pagination" (pageChange)='pageChanged($event)'></app-pagination>
+
+            <table align="left" class="grid-box">
+               <tr>
+                  <th style="width: 100px" *ngIf="logedUser !=null && logedUser.role.includes('ROLE_ADMIN')"
+                     i18n="@@mentorName">
+                     Mentor Name
+                  </th>
+                  <th style="width: 100px" i18n="@@skillName">Skill Name</th>
+                  <th style="width: 130px" i18n="@@amount">Amount</th>
+                  <th style="width: 130px" i18n="@@transType">Transaction Type</th>
+                  <th style="width: 130px" i18n="@@transDate">Transaction Date</th>
+                  <th style="width: 180px" i18n="@@remarks">Remarks</th>
+                  <th style="width: 150px" i18n="@@razorPmtId">Razorpay Payment Id</th>
+                  <!--th style="width: 130px" *ngIf="logedUser !=null && logedUser.role.includes('ROLE_MENTOR')"
+                     i18n="withdrawMoney">Withdraw Money</th>-->
+               </tr>
+               <tr *ngFor="let item of pagination?.content; let index = index"
+                  [ngClass]="{'alternate': 0 === index % 2}">
+                  <td *ngIf="logedUser !=null && logedUser.role.includes('ROLE_ADMIN')">{{item.mentorName}}</td>
+                  <td>{{item.skillName}}</td>
+                  <td>{{item.amount}}</td>
+                  <td>{{item.txnType}}</td>
+                  <td>{{item.createdDate}}</td>
+                  <td>{{remarks}}</td>
+                  <td>{{item.razorpayPaymentId}}</td>
+                  <!--td align="center" *ngIf="logedUser !=null && logedUser.role.includes('ROLE_MENTOR')">
+                     <ng-container *ngIf="item.txnType == 'CR'">
+                        <mat-icon (click)="withdrawMoney(index)" i18n-title title="Withdraw Money"
+                           [ngStyle]="{'color':'green'}">edit</mat-icon>
+                     </ng-container>
+                  </td>-->
+               </tr>
+               <tr *ngIf="pagination?.content.length == 0">
+                  <td style="text-align: center" colspan="7" i18n="@@noData"><b>No Data found</b></td>
+               </tr>
+            </table>
+
+         </td>
+      </tr>
+   </table>
+
+</div>
+
+<div class="wait" id="wait"></div>

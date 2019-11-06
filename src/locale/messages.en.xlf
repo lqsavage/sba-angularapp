@@ -1,0 +1,1529 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="ngb.alert.close" datatype="html">
+        <source>Close</source>
+        <target>Close</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/alert/alert.d.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.previous" datatype="html">
+        <source>Previous</source>
+        <target>Previous</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.next" datatype="html">
+        <source>Next</source>
+        <target>Next</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.previous-month" datatype="html">
+        <source>Previous month</source>
+        <target>Previous month</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.next-month" datatype="html">
+        <source>Next month</source>
+        <target>Next month</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-month" datatype="html">
+        <source>Select month</source>
+        <target>Select month</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-year" datatype="html">
+        <source>Select year</source>
+        <target>Select year</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first" datatype="html">
+        <source>««</source>
+        <target>««</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first-aria" datatype="html">
+        <source>First</source>
+        <target>First</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous" datatype="html">
+        <source>«</source>
+        <target>«</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous-aria" datatype="html">
+        <source>Previous</source>
+        <target>Previous</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next" datatype="html">
+        <source>»</source>
+        <target>»</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next-aria" datatype="html">
+        <source>Next</source>
+        <target>Next</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last" datatype="html">
+        <source>»»</source>
+        <target>»»</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last-aria" datatype="html">
+        <source>Last</source>
+        <target>Last</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.progressbar.value" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</source>
+        <target><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
+        <source>Increment hours</source>
+        <target>Increment hours</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.HH" datatype="html">
+        <source>HH</source>
+        <target>HH</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.hours" datatype="html">
+        <source>Hours</source>
+        <target>Hours</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
+        <source>Decrement hours</source>
+        <target>Decrement hours</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
+        <source>Increment minutes</source>
+        <target>Increment minutes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.MM" datatype="html">
+        <source>MM</source>
+        <target>MM</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.minutes" datatype="html">
+        <source>Minutes</source>
+        <target>Minutes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
+        <source>Decrement minutes</source>
+        <target>Decrement minutes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
+        <source>Increment seconds</source>
+        <target>Increment seconds</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.SS" datatype="html">
+        <source>SS</source>
+        <target>SS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.seconds" datatype="html">
+        <source>Seconds</source>
+        <target>Seconds</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
+        <source>Decrement seconds</source>
+        <target>Decrement seconds</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.PM" datatype="html">
+        <source>PM</source>
+        <target>PM</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.AM" datatype="html">
+        <source>AM</source>
+        <target>AM</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
+        <source>Home</source>
+	<target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="links" datatype="html">
+        <source>{VAR_SELECT, select, link.text {link.text}}</source>
+	<target>{VAR_SELECT, select, Technology Management {Technology Management}
+        User Management{User Management}
+        Training Management{Training Management}
+        Payment Management{Payment Management}
+        Skill Management{Skill Management}
+        Calendar Management{Calendar Management}}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="subLinks" datatype="html">
+        <source>{VAR_SELECT, select, sublink.text {sublink.text} }</source>
+	<target>{VAR_SELECT, select, Block/Unblock User{Block/Unblock User}
+        All Registered Training(s){All Registered Training(s)} All Proposed Training(s){All Proposed Training(s)}
+        Rate Mentor{Rate Mentor} Update Training Status{Update Training Status} All In-Progress Training(s){All In-Progress Training(s)} 
+        All Completed Training(s){All Completed Training(s)}
+        Payment Report{Payment Report} Payment Commission{Payment Commission}}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signup" datatype="html">
+        <source>Signup</source>
+	<target>Signup</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcome" datatype="html">
+        <source>Welcome <x id="INTERPOLATION" equiv-text="{{logedUser.userName}}"/>
+            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+        </source>
+        <target>Welcome <x id="INTERPOLATION" equiv-text="{{logedUser.userName}}"/>
+            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+        </target>		
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="logout" datatype="html">
+        <source>Logout</source>
+        <target>Logout</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signin" datatype="html">
+        <source>Sign In</source>
+	<target>Sign In</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userName" datatype="html">
+        <source>User Name</source>
+        <target>User Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password" datatype="html">
+        <source>Password</source>
+        <target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rememberme" datatype="html">
+        <source>Keep me signed in</source>
+        <target>Keep me signed in</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgetPassword" datatype="html">
+        <source>Forget Password?</source>
+        <target>Forget Password?</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userNameColon" datatype="html">
+        <source>User Name : </source>
+        <target>User Name : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4fcb6dbd1b656de4f606e061af0ed606d3fdc547" datatype="html">
+        <source>User Name</source>
+        <target>User Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passwordColon" datatype="html">
+        <source>Password : </source>
+        <target>Password : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
+        <source>Password</source>
+        <target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confPasswdColon" datatype="html">
+        <source>Confirm Password : </source>
+        <target>Confirm Password : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c1b7e6d75ff4285c7636c67e5ef259629b81725b" datatype="html">
+        <source>Confirm Password</source>
+        <target>Confirm Password</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="firstNameColon" datatype="html">
+        <source>First Name : </source>
+        <target>First Name : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c83b838d845690bcb897f775f53b5316535306dc" datatype="html">
+        <source>First Name</source>
+        <target>First Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lastNameColon" datatype="html">
+        <source>Last Name : </source>
+        <target>Last Name : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="166b2cc65003221ff5f3ec05d5baca41e6821396" datatype="html">
+        <source>Last Name</source>
+        <target>Last Name</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactNoColon" datatype="html">
+        <source>Contact Number : </source>
+        <target>Contact Number : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3a7daf5ddaf6256f50016ce0d4e66df3929c3bb1" datatype="html">
+        <source>Contact Number</source>
+        <target>Contact Number</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="linkedinURLColon" datatype="html">
+        <source>Linkedin URL : </source>
+        <target>Linkedin URL : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ef72870829ea9ff74cc24ea4ea5ac5c7bc60525a" datatype="html">
+        <source>Linkedin URL</source>
+        <target>Linkedin URL</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="yoeColon" datatype="html">
+        <source>Years of Experience : </source>
+        <target>Years of Experience : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="97d3ced38caacd5e528e62d9c9f81a03f02ed7d8" datatype="html">
+        <source>Years of Experience</source>
+        <target>Years of Experience</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userTypeColon" datatype="html">
+        <source>User Type : </source>
+        <target>User Type : </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userTypeList" datatype="html">
+        <source>
+            <x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/>User Type<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+            <x id="START_TAG_OPTION_1" ctype="x-option" equiv-text="&lt;option&gt;"/>Mentor<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+            <x id="START_TAG_OPTION_2" ctype="x-option" equiv-text="&lt;option&gt;"/>User<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+        </source>
+        <target>
+            <x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/>User Type<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+            <x id="START_TAG_OPTION_1" ctype="x-option" equiv-text="&lt;option&gt;"/>Mentor<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+            <x id="START_TAG_OPTION_2" ctype="x-option" equiv-text="&lt;option&gt;"/>User<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+        </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28629af803ab8b5f6e995b17d486e6a1527e2a96" datatype="html">
+        <source>Sign Up</source>
+        <target>Sign Up</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b4903a991073107f2ccf9b321de72f4c72df4a98" datatype="html">
+        <source>Clear Field(s)</source>
+        <target>Clear Field(s)</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="db2b3475df5dcfd6efbc44ed7151efce777d7774" datatype="html">
+        <source>Update Profile</source>
+        <target>Update Profile</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/signup.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userMgmtTitle" datatype="html">
+        <source>User Management</source>
+        <target>User Management</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="firstName" datatype="html">
+        <source>First Name</source>
+        <target>First Name</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lastName" datatype="html">
+        <source>Last Name</source>
+        <target>Last Name</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactNo" datatype="html">
+        <source>Contact Number</source>
+        <target>Contact Number</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userType" datatype="html">
+        <source>User Type</source>
+        <target>User Type</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="linkedinURL" datatype="html">
+        <source>Linkedin Url</source>
+        <target>Linkedin Url</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="yoe" datatype="html">
+        <source>Years Of Experience</source>
+        <target>Years Of Experience</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userConfirmed" datatype="html">
+        <source>User Confirmed</source>
+        <target>User Confirmed</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="resetPasswd" datatype="html">
+        <source>Reset Password</source>
+        <target>Reset Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bunbUser" datatype="html">
+        <source>Block/Unblock User</source>
+        <target>Block/Unblock User</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7f5d0c10614e8a34f0e2dad33a0568277c50cf69" datatype="html">
+        <source>Block</source>
+        <target>Block</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="78a676ae94f78abfe79789da7c93e6c2e318dfff" datatype="html">
+        <source>Un-Block</source>
+        <target>Un-Block</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noData" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>No Data found<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>No Data found<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/user.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">165</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">197</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">244</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">246</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mentorSearchTitle" datatype="html">
+        <source>Search For Mentor</source>
+        <target>Search For Mentor</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f58349988293251b50f1170f05b41a5871d342a6" datatype="html">
+        <source>Technology Name</source>
+        <target>Technology Name</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="768c7970280aa9e9eaaed823d60de421f1fe8489" datatype="html">
+        <source>Search Mentor</source>
+        <target>Search Mentor</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="From&amp;ToDate" datatype="html">
+        <source>From &amp; To Date</source>
+        <target>From &amp; To Date</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="From&amp;ToTime" datatype="html">
+        <source>From &amp; To Time</source>
+        <target>From &amp; To Time</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="select" datatype="html">
+        <source>Select</source>
+        <target>Select</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mentorList" datatype="html">
+        <source>Mentor List</source>
+        <target>Mentor List</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mentorName" datatype="html">
+        <source>Mentor Name</source>
+        <target>Mentor Name</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mentorAvgRating" datatype="html">
+        <source>Average Rating</source>
+        <target>Average Rating</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mentorTotExp" datatype="html">
+        <source>Total Experience</source>
+        <target>Total Experience</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mentorTrnDel" datatype="html">
+        <source>Tarinings Delivered</source>
+        <target>Tarinings Delivered</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faclityOffered" datatype="html">
+        <source>Facilities Offered</source>
+        <target>Facilities Offered</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fees" datatype="html">
+        <source>Fees</source>
+        <target>Fees</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="18c764d0476eee6ef89686a85dbd6e682c9a0dac" datatype="html">
+        <source>View Profile</source>
+        <target>View Profile</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trainingHist" datatype="html">
+        <source>Training History</source>
+        <target>Training History</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4121d6900f6189eeb8acf55065cc566bbd8d7b73" datatype="html">
+        <source>Training History</source>
+        <target>Training History</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sendPropose" datatype="html">
+        <source>Send Proposal</source>
+        <target>Send Proposal</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="47bb7a16e6461b96550d445b2dcba4efa9f777ab" datatype="html">
+        <source>Send Proposal</source>
+        <target>Send Proposal</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
+        <source>Close</source>
+        <target>Close</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="viewMentProfTitle" datatype="html">
+        <source>View Mentor Profile</source>
+        <target>View Mentor Profile</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="traineeName" datatype="html">
+        <source>Trainee Name</source>
+        <target>Trainee Name</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fromDate&amp;Time" datatype="html">
+        <source>From Date &amp; Time</source>
+        <target>From Date &amp; Time</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="toDate&amp;Time" datatype="html">
+        <source>To Date &amp; Time</source>
+        <target>To Date &amp; Time</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rating" datatype="html">
+        <source>Rating</source>
+        <target>Rating</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_search.component.html</context>
+          <context context-type="linenumber">151</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">216</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techMgmtTitle" datatype="html">
+        <source>Technology Management</source>
+        <target>Technology Management</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="technology" datatype="html">
+        <source>Technology</source>
+        <target>Technology</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">156</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">211</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="toc" datatype="html">
+        <source>Table of Content</source>
+        <target>Table of Content</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="prereq" datatype="html">
+        <source>Prerequisites</source>
+        <target>Prerequisites</target> 	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="05c9ac9298da9032c2316ef2330431f21a1aa255" datatype="html">
+        <source>Technology</source>
+        <target>Technology</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="486001f24d70a21ef836b85038a044185dd74afd" datatype="html">
+        <source>Table of Content</source>
+        <target>Table of Content</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="298d03d5eccdd0418252eead6914be2b4c2e1961" datatype="html">
+        <source>Prerequisites</source>
+        <target>Prerequisites</target> 	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="463a11a2bafb56516642d1b7cabd0185b0a861f8" datatype="html">
+        <source>Add Record</source>
+        <target>Add Record</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e989d10346ed442c3449b8349c1268941b3959fe" datatype="html">
+        <source>Save Record</source>
+        <target>Save Record</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="79c45456edcf0f733d724b905897e8ee5ed72a6b" datatype="html">
+        <source>Cancel Edit</source>
+        <target>Cancel Edit</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2e5383456e64a1db73ba2861a98cca05343355fe" datatype="html">
+        <source>Edit Record</source>
+        <target>Edit Record</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ced2f0b2be593b3b23f73d29a257f0f7bb45a682" datatype="html">
+        <source>Delete Record</source>
+        <target>Delete Record</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/technology/technology.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="startDate&amp;Time" datatype="html">
+        <source>Start Date &amp; Time</source>
+        <target>Start Date &amp; Time</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">157</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">212</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="endDate&amp;Time" datatype="html">
+        <source>End Date &amp; Time</source>
+        <target>End Date &amp; Time</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">158</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">213</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trainingStatus" datatype="html">
+        <source>Training Status</source>
+        <target>Training Status</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">214</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="progress" datatype="html">
+        <source>Progress</source>
+        <target>Progress</target> 	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">215</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amtRec" datatype="html">
+        <source>Amount Received</source>
+        <target>Amount Received</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="commission" datatype="html">
+        <source>Commission</source>
+        <target>Commission</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="appProposal" datatype="html">
+        <source>Accept/Reject Proposal</source>
+        <target>Accept/Reject Proposal</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6fc5e65900ae1415d3170d5d2842f0dcae1b6645" datatype="html">
+        <source>Accept</source>
+        <target>Accept</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="20c3d69c0b67a74df0aa3920485016b2080578f6" datatype="html">
+        <source>Reject</source>
+	<target>Reject</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a78cd978a9c0f6b6c442bcec8b50fc1fc0fbcd79" datatype="html">
+        <source>Pay Training Fees</source>
+        <target>Pay Training Fees</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="feesPaid" datatype="html">
+        <source>Fees Paid</source>
+        <target>Fees Paid</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">218</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="postRating" datatype="html">
+        <source>Rating</source>
+        <target>Rating</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">161</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11fc9bdd4d050ea95026408013a064e1be6f6000" datatype="html">
+        <source>Post Rating</source>
+        <target>Post Rating</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trainingStatusList" datatype="html">
+        <source>
+           <x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/>
+           <x id="INTERPOLATION" equiv-text="{{trainingStatus.value}}"/>
+           <x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+        </source>
+        <target>
+           <x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/>
+           <x id="INTERPOLATION" equiv-text="{{trainingStatus.value}}"/>
+           <x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+        </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">184</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="77db9a51c625ff3e52398ef5e512c49614398008" datatype="html">
+        <source>Update Training Status</source>
+        <target>Update Training Status</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/training/training.component.html</context>
+          <context context-type="linenumber">192</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mentorSkillTitle" datatype="html">
+        <source>Mentor&apos;s Skill(s)</source>
+        <target>Mentor&apos;s Skill(s)</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="skillName" datatype="html">
+        <source>Skill Name</source>
+        <target>Skill Name</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="selfRating" datatype="html">
+        <source>Self Rating</source>
+        <target>Self Rating</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c598d3d5291341a7237b23b92d1f05d485f355fa" datatype="html">
+        <source>Skill Name</source>
+        <target>Skill Name</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fa2ea9b1014da00d216b96ade19d545894cb8a88" datatype="html">
+        <source>Facilities Offered</source>
+        <target>Facilities Offered</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c20172223f84462032664d717d739297e5a9e2fe" datatype="html">
+        <source>Fees</source>
+        <target>Fees</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_skill.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mentorCalendarTitle" datatype="html">
+        <source>Mentor&apos;s Calendar</source>
+	<target>Mentor&apos;s Calendar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/mentor/mentor_calendar.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pmtMgmtTitle" datatype="html">
+        <source>Payment Management</source>
+        <target>Payment Management</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fromDate" datatype="html">
+        <source>From Date </source>
+        <target>From Date </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="toDate" datatype="html">
+        <source>To Date </source>
+	<target>To Date </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addf0dc8a913c19d58059639260d233f2258867f" datatype="html">
+        <source>Payment Details</source>
+        <target>Payment Details</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount" datatype="html">
+        <source>Amount</source>
+        <target>Amount</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="transType" datatype="html">
+        <source>Transaction Type</source>
+        <target>Transaction Type</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="transDate" datatype="html">
+        <source>Transaction Date</source>
+        <target>Transaction Date</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="remarks" datatype="html">
+        <source>Remarks</source>
+        <target>Remarks</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="razorPmtId" datatype="html">
+        <source>Razorpay Payment Id</source>
+	<target>Razorpay Payment Id</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7ce85b433e5d0f32802e2782fce8589c33a7ba64" datatype="html">
+        <source>Withdraw Money</source>
+        <target>Withdraw Money</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <note priority="1" from="description">withdrawMoney</note>
+      </trans-unit>
+      <trans-unit id="c61de8ccb198d26f2c587a7262b4eccfff1fc0b2" datatype="html">
+        <source>Withdraw Money</source>
+	<target>Withdraw Money</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pmtCommTitle" datatype="html">
+        <source>Payment Commission</source>
+        <target>Payment Commission</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment_commission.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="existingComm" datatype="html">
+        <source>Existing Commission : </source>
+        <target>Existing Commission : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment_commission.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="newComm" datatype="html">
+        <source>New Commission : </source>
+        <target>New Commission : </target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment_commission.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2c0d209af4cf51193007be2d8ab987f02bbf2cc8" datatype="html">
+        <source>New Commission</source>
+        <target>New Commission</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment_commission.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="46d3aa410637d52b41046d54e37fefa71e3ef5c0" datatype="html">
+        <source>Update Commission</source>
+        <target>Update Commission</target>	
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/payment/payment_commission.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

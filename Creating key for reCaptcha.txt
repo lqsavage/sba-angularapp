@@ -1,0 +1,13 @@
+Adding reCAPTCHA to your site
+-------------------------------------
+https://www.google.com/recaptcha/admin/create#list
+
+
+
+'localhost' has been registered.
+
+Use this site key in the HTML code your site serves to users.
+Copy site key   :  6LfwJpAUAAAAALYaIyO9_IleJlZ4BSJkoZVkEhbW
+
+Use this secret key for communication between your site and reCAPTCHA.
+Copy secret key :  6LfwJpAUAAAAAD3ulrv7dtg5w1Dj1CRe5dEjClth
