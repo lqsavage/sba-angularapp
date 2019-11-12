@@ -2613,7 +2613,7 @@ var TechnologyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"rectangleBox\">\n\n   <table border=\"0\" width=\"100%\">\n      <tr>\n         <td>\n            <h4>{{pageTitle || translate}}</h4>\n         </td>\n      </tr>\n      <tr>\n         <td>\n\n            <app-pagination [pagination]=\"pagination\" (pageChange)='pageChanged($event)'></app-pagination>\n\n            <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/allTrainings'\">\n               <tr align=\"center\">\n                  <th style=\"width: 120px\" i18n=\"@@traineeName\">Trainee Name</th>\n                  <th style=\"width: 120px\" i18n=\"@@mentorName\">Mentor Name</th>\n                  <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                  <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                  <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                  <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                  <th style=\"width: 110px\" i18n=\"@@progress\">Progress</th>\n                  <th style=\"width: 110px\" i18n=\"@@rating\">Rating</th>\n                  <th style=\"width: 120px\" i18n=\"@@amtRec\">Amount Received</th>\n                  <th style=\"width: 100px\" i18n=\"@@commission\">Commission</th>\n               </tr>\n               <tr *ngFor=\"let item of pagination?.content; let index = index\"\n                  [ngClass]=\"{'alternate': 0 === index % 2}\">\n                  <td>{{item.userName}}</td>\n                  <td>{{item.mentorName}}</td>\n                  <td>{{item.skillName}}</td>\n                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                  <td>{{item.status}}</td>\n                  <td>\n                     <bar-rating [(rate)]=\"item.progress\" [max]=\"4\" [theme]=\"'movie'\"\n                        [titles]=\"['25%', '50%' , '75%', '100%']\" [showText]=\"true\" [readOnly]=\"true\"></bar-rating>\n                  </td>\n                  <td>\n                     <bar-rating [(rate)]=\"item.rating\" [max]=\"5\"\n                        [titles]=\"['Poor', 'Average', 'Good', 'Very Good', 'Excellent']\" [showText]=\"true\"\n                        [readOnly]=\"true\"></bar-rating>\n                  </td>\n                  <td>{{item.amountReceived}}</td>\n                  <td>{{item.commissionAmount}}</td>\n               </tr>\n               <tr *ngIf=\"pagination?.content.length == 0\">\n                  <td align=\"center\" colspan=\"10\" i18n=\"@@noData\"><b>No Data found</b></td>\n               </tr>\n            </table>\n\n\n            <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/receivedProposl'\">\n               <tr align=\"center\">\n                  <th style=\"width: 120px\" i18n=\"@@traineeName\">Trainee Name</th>\n                  <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                  <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                  <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                  <th style=\"width: 170px\" i18n=\"@@appProposal\">Accept/Reject Proposal</th>\n               </tr>\n               <tr *ngFor=\"let item of pagination?.content; let index = index\"\n                  [ngClass]=\"{'alternate': 0 === index % 2}\">\n                  <td>{{item.userName}}</td>\n                  <td>{{item.skillName}}</td>\n                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                  <td align=\"center\">\n                     <mat-icon (click)=\"approveTraining(index,'CONFIRMED')\" i18n-title title=\"Accept\"\n                        [ngStyle]=\"{'color':'green'}\">check</mat-icon>\n                     &nbsp;&nbsp;\n                     <mat-icon (click)=\"approveTraining(index,'REJECTED')\" i18n-title title=\"Reject\"\n                        [ngStyle]=\"{'color':'red'}\">close</mat-icon>\n                  </td>\n               </tr>\n               <tr *ngIf=\"pagination?.content.length == 0\">\n                  <td align=\"center\" colspan=\"5\" i18n=\"@@noData\"><b>No Data found</b></td>\n               </tr>\n            </table>\n\n\n            <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/finalizeProposal'\">\n               <tr align=\"center\">\n                  <th style=\"width: 120px\" i18n=\"@@mentorName\">Mentor Name</th>\n                  <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                  <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                  <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                  <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                  <th style=\"width: 150px\" i18n=\"@@fees\">Training Fees</th>\n                  <th style=\"width: 70px\"></th>\n               </tr>\n               <tr *ngFor=\"let item of pagination?.content; let index = index\"\n                  [ngClass]=\"{'alternate': 0 === index % 2}\">\n                  <td>{{item.mentorName}}</td>\n                  <td>{{item.skillName}}</td>\n                  <td>{{item.startDate}} {{item.startTime}}</td>\n                  <td>{{item.endDate}} {{item.endTime}}</td>\n                  <td>{{item.status}}</td>\n                  <td>{{item.fees}}</td>\n                  <td align=\"center\" *ngIf=\"item.status == 'CONFIRMED' && item.amountReceived == 0\">\n                     <mat-icon (click)=\"payFees(index)\" i18n-title title=\"Pay Training Fees\"\n                        [ngStyle]=\"{'color':'green'}\">edit</mat-icon>\n                  </td>\n                  <td align=\"center\" *ngIf=\"item.status == 'CONFIRMED' && item.amountReceived != 0\" i18n=\"@@feesPaid\">\n                     Fees Paid\n                  </td>\n                  <td *ngIf=\"item.status == 'REJECTED'\"></td>\n               </tr>\n               <tr *ngIf=\"pagination?.content.length == 0\">\n                  <td align=\"center\" colspan=\"7\" i18n=\"@@noData\"><b>No Data found</b></td>\n               </tr>\n            </table>\n\n\n            <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/rateMentor'\">\n               <tr align=\"center\">\n                  <th style=\"width: 120px\" i18n=\"@@mentorName\">Mentor Name</th>\n                  <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                  <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                  <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                  <th style=\"width: 110px\" i18n=\"@@feesPaid\">Fees Paid</th>\n                  <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                  <th style=\"width: 110px\" i18n=\"@@progress\">Progress</th>\n                  <th style=\"width: 110px\" i18n=\"@@postRating\">Rating</th>\n                  <th style=\"width: 70px\"></th>\n               </tr>\n               <tr *ngFor=\"let item of pagination?.content; let index = index\"\n                  [ngClass]=\"{'alternate': 0 === index % 2}\">\n                  <td>{{item.mentorName}}</td>\n                  <td>{{item.skillName}}</td>\n                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                  <td>{{item.amountReceived}}</td>\n                  <td>{{item.status}}</td>\n                  <td>\n                     <bar-rating [(rate)]=\"item.progress\" [max]=\"4\" [theme]=\"'movie'\"\n                        [titles]=\"['25%', '50%' , '75%', '100%']\" [showText]=\"true\" [readOnly]=\"true\"></bar-rating>\n                  </td>\n                  <td>\n                     <bar-rating [(rate)]=\"item.rating\" [max]=\"5\"\n                        [titles]=\"['Poor', 'Average', 'Good', 'Very Good', 'Excellent']\" [showText]=\"true\"></bar-rating>\n                  </td>\n                  <td align=\"center\">\n                     <mat-icon (click)=\"updateRating(index)\" i18n-title title=\"Post Rating\"\n                        [ngStyle]=\"{'color':'green'}\">edit</mat-icon>\n                  </td>\n               </tr>\n               <tr *ngIf=\"pagination?.content.length == 0\">\n                  <td align=\"center\" colspan=\"9\" i18n=\"@@noData\"><b>No Data found</b></td>\n               </tr>\n            </table>\n\n\n            <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/updateTrainingStatus'\">\n               <tr align=\"center\">\n                  <th style=\"width: 120px\" i18n=\"@@mentorName\">Mentor Name</th>\n                  <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                  <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                  <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                  <th style=\"width: 110px\" i18n=\"@@feesPaid\">Fees Paid</th>\n                  <th style=\"width: 110px\" i18n=\"@@progress\">Progress</th>\n                  <th style=\"width: 110px\" i18n=\"@@postRating\">Rating</th>\n                  <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                  <th style=\"width: 70px\"></th>\n               </tr>\n               <tr *ngFor=\"let item of pagination?.content; let index = index\"\n                  [ngClass]=\"{'alternate': 0 === index % 2}\">\n                  <td>{{item.mentorName}}</td>\n                  <td>{{item.skillName}}</td>\n                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                  <td>{{item.amountReceived}}</td>\n                  <td>\n                     <bar-rating [(rate)]=\"item.progress\" [max]=\"4\" [theme]=\"'movie'\"\n                        [titles]=\"['25%', '50%' , '75%', '100%']\" [showText]=\"true\" [readOnly]=\"true\"></bar-rating>\n                  </td>\n                  <td style=\"width: 30px;\">\n                     <bar-rating [(rate)]=\"item.rating\" [max]=\"5\"\n                        [titles]=\"['Poor', 'Average', 'Good', 'Very Good', 'Excellent']\" [showText]=\"true\"\n                        [readOnly]=\"true\">\n                     </bar-rating>\n                  </td>\n                  <td>\n                     <select i18n=\"@@trainingStatusList\" name=\"trainingStatus$index\" id=\"trainingStatus$index\"\n                        class=\"requiredfield\" (change)=\"getTrainingStatus($event)\">\n                        <option *ngFor=\"let trainingStatus of trainingStatusList\"\n                           [selected]=\"trainingStatus.caption == item.status\">\n                           {{trainingStatus.value}}\n                        </option>\n                     </select>\n                  </td>\n                  <td align=\"center\">\n                     <mat-icon (click)=\"updateTrainingStatus(index)\" i18n-title title=\"Update Training Status\"\n                        [ngStyle]=\"{'color':'green'}\">edit</mat-icon>\n                  </td>\n               </tr>\n               <tr *ngIf=\"pagination?.content.length == 0\">\n                  <td align=\"center\" colspan=\"9\" i18n=\"@@noData\"><b>No Data found</b></td>\n               </tr>\n            </table>\n\n\n            <table align=\"left\" class=\"grid-box\"\n               *ngIf=\"routePath == '/inprogressTraining' || routePath == '/completedTraining'\">\n               <tr align=\"center\">\n                  <th style=\"width: 120px\" *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_MENTOR')\">\n                     Trainee Name\n                  </th>\n                  <th style=\"width: 120px\" *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\">\n                     Mentor Name\n                  </th>\n                  <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                  <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                  <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                  <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                  <th style=\"width: 110px\" i18n=\"@@progress\">Progress</th>\n                  <th style=\"width: 110px\" i18n=\"@@rating\">Rating</th>\n                  <th style=\"width: 110px\" i18n=\"@@feesPaid\"\n                     *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\">\n                     Fees Paid\n                  </th>\n               </tr>\n               <tr *ngFor=\"let item of pagination?.content; let index = index\"\n                  [ngClass]=\"{'alternate': 0 === index % 2}\">\n                  <td *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_MENTOR')\">{{item.userName}}</td>\n                  <td *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\">{{item.mentorName}}</td>\n                  <td>{{item.skillName}}</td>\n                  <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                  <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                  <td>{{item.status}}</td>\n                  <td>\n                     <bar-rating [(rate)]=\"item.progress\" [max]=\"4\" [theme]=\"'movie'\"\n                        [titles]=\"['25%', '50%' , '75%', '100%']\" [showText]=\"true\" [readOnly]=\"true\">\n                     </bar-rating>\n                  </td>\n                  <td>\n                     <bar-rating [(rate)]=\"item.rating\" [max]=\"5\"\n                        [titles]=\"['Poor', 'Average', 'Good', 'Very Good', 'Excellent']\" [showText]=\"true\"\n                        [readOnly]=\"true\"></bar-rating>\n                  </td>\n                  <td *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\">{{item.amountReceived}}</td>\n               </tr>\n               <tr *ngIf=\"pagination?.content.length == 0\">\n                  <td align=\"center\" colspan=\"8\" i18n=\"@@noData\"\n                     *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\"><b>No Data found</b></td>\n                  <td align=\"center\" colspan=\"7\" i18n=\"@@noData\"\n                     *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_MENTOR')\"><b>No Data found</b></td>\n               </tr>\n            </table>\n\n         </td>\n      </tr>\n   </table>\n\n</div>\n\n<div class=\"wait\" id=\"wait\"></div>"
+module.exports = "<div class=\"rectangleBox\">\n\n    <table border=\"0\" width=\"100%\">\n        <tr>\n            <td>\n                <h4>{{pageTitle || translate}}</h4>\n            </td>\n        </tr>\n        <tr>\n            <td>\n\n                <app-pagination [pagination]=\"pagination\" (pageChange)='pageChanged($event)'></app-pagination>\n\n                <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/allTrainings'\">\n                    <tr align=\"center\">\n                        <th style=\"width: 120px\" i18n=\"@@traineeName\">Trainee Name</th>\n                        <th style=\"width: 120px\" i18n=\"@@mentorName\">Mentor Name</th>\n                        <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                        <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                        <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                        <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                        <th style=\"width: 110px\" i18n=\"@@progress\">Progress</th>\n                        <th style=\"width: 110px\" i18n=\"@@rating\">Rating</th>\n                        <th style=\"width: 120px\" i18n=\"@@amtRec\">Amount Received</th>\n                        <th style=\"width: 100px\" i18n=\"@@commission\">Commission</th>\n                    </tr>\n                    <tr *ngFor=\"let item of pagination?.content; let index = index\" [ngClass]=\"{'alternate': 0 === index % 2}\">\n                        <td>{{item.userName}}</td>\n                        <td>{{item.mentorName}}</td>\n                        <td>{{item.skillName}}</td>\n                        <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                        <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                        <td>{{item.status}}</td>\n                        <td>\n                            <bar-rating [(rate)]=\"item.progress\" [max]=\"4\" [theme]=\"'movie'\" [titles]=\"['25%', '50%' , '75%', '100%']\" [showText]=\"true\" [readOnly]=\"true\"></bar-rating>\n                        </td>\n                        <td>\n                            <bar-rating [(rate)]=\"item.rating\" [max]=\"5\" [titles]=\"['Poor', 'Average', 'Good', 'Very Good', 'Excellent']\" [showText]=\"true\" [readOnly]=\"true\">\n                            </bar-rating>\n                        </td>\n                        <td>{{item.amountReceived}}</td>\n                        <td>{{item.commissionAmount}}</td>\n                    </tr>\n                    <tr *ngIf=\"pagination?.content.length == 0\">\n                        <td align=\"center\" colspan=\"10\" i18n=\"@@noData\"><b>No Data found</b></td>\n                    </tr>\n                </table>\n\n\n                <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/receivedProposl'\">\n                    <tr align=\"center\">\n                        <th style=\"width: 120px\" i18n=\"@@traineeName\">Trainee Name</th>\n                        <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                        <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                        <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                        <th style=\"width: 170px\" i18n=\"@@appProposal\">Accept/Reject Proposal</th>\n                    </tr>\n                    <tr *ngFor=\"let item of pagination?.content; let index = index\" [ngClass]=\"{'alternate': 0 === index % 2}\">\n                        <td>{{item.userName}}</td>\n                        <td>{{item.skillName}}</td>\n                        <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                        <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                        <td align=\"center\">\n                            <mat-icon (click)=\"approveTraining(index,'CONFIRMED')\" i18n-title title=\"Accept\" [ngStyle]=\"{'color':'green'}\">check</mat-icon>\n                            &nbsp;&nbsp;\n                            <mat-icon (click)=\"approveTraining(index,'REJECTED')\" i18n-title title=\"Reject\" [ngStyle]=\"{'color':'red'}\">close</mat-icon>\n                        </td>\n                    </tr>\n                    <tr *ngIf=\"pagination?.content.length == 0\">\n                        <td align=\"center\" colspan=\"5\" i18n=\"@@noData\"><b>No Data found</b></td>\n                    </tr>\n                </table>\n\n\n                <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/finalizeProposal'\">\n                    <tr align=\"center\">\n                        <th style=\"width: 120px\" i18n=\"@@mentorName\">Mentor Name</th>\n                        <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                        <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                        <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                        <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                        <th style=\"width: 150px\" i18n=\"@@fees\">Training Fees</th>\n                        <th style=\"width: 70px\"></th>\n                    </tr>\n                    <tr *ngFor=\"let item of pagination?.content; let index = index\" [ngClass]=\"{'alternate': 0 === index % 2}\">\n                        <td>{{item.mentorName}}</td>\n                        <td>{{item.skillName}}</td>\n                        <td>{{item.startDate}} {{item.startTime}}</td>\n                        <td>{{item.endDate}} {{item.endTime}}</td>\n                        <td>{{item.status}}</td>\n                        <td>{{item.fees}}</td>\n                        <td align=\"center\" *ngIf=\"item.status == 'CONFIRMED' && item.amountReceived == 0\">\n                            <mat-icon (click)=\"payFees(index)\" i18n-title title=\"Pay Training Fees\" [ngStyle]=\"{'color':'green'}\">edit\n                            </mat-icon>\n                        </td>\n                        <td align=\"center\" *ngIf=\"item.status == 'CONFIRMED' && item.amountReceived != 0\" i18n=\"@@feesPaid\">\n                            Fees Paid\n                        </td>\n                        <td *ngIf=\"item.status == 'REJECTED'\"></td>\n                    </tr>\n                    <tr *ngIf=\"pagination?.content.length == 0\">\n                        <td align=\"center\" colspan=\"7\" i18n=\"@@noData\"><b>No Data found</b></td>\n                    </tr>\n                </table>\n\n\n                <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/rateMentor'\">\n                    <tr align=\"center\">\n                        <th style=\"width: 120px\" i18n=\"@@mentorName\">Mentor Name</th>\n                        <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                        <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                        <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                        <th style=\"width: 110px\" i18n=\"@@feesPaid\">Fees Paid</th>\n                        <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                        <th style=\"width: 110px\" i18n=\"@@progress\">Progress</th>\n                        <th style=\"width: 110px\" i18n=\"@@postRating\">Rating</th>\n                        <th style=\"width: 70px\"></th>\n                    </tr>\n                    <tr *ngFor=\"let item of pagination?.content; let index = index\" [ngClass]=\"{'alternate': 0 === index % 2}\">\n                        <td>{{item.mentorName}}</td>\n                        <td>{{item.skillName}}</td>\n                        <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                        <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                        <td>{{item.amountReceived}}</td>\n                        <td>{{item.status}}</td>\n                        <td>\n                            <bar-rating [(rate)]=\"item.progress\" [max]=\"4\" [theme]=\"'movie'\" [titles]=\"['25%', '50%' , '75%', '100%']\" [showText]=\"true\" [readOnly]=\"true\"></bar-rating>\n                        </td>\n                        <td>\n                            <bar-rating [(rate)]=\"item.rating\" [max]=\"5\" [titles]=\"['Poor', 'Average', 'Good', 'Very Good', 'Excellent']\" [showText]=\"true\"></bar-rating>\n                        </td>\n                        <td align=\"center\">\n                            <mat-icon (click)=\"updateRating(index)\" i18n-title title=\"Post Rating\" [ngStyle]=\"{'color':'green'}\">edit\n                            </mat-icon>\n                        </td>\n                    </tr>\n                    <tr *ngIf=\"pagination?.content.length == 0\">\n                        <td align=\"center\" colspan=\"9\" i18n=\"@@noData\"><b>No Data found</b></td>\n                    </tr>\n                </table>\n\n\n                <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/updateTrainingStatus'\">\n                    <tr align=\"center\">\n                        <th style=\"width: 120px\" i18n=\"@@mentorName\">Mentor Name</th>\n                        <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                        <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                        <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                        <th style=\"width: 110px\" i18n=\"@@feesPaid\">Fees Paid</th>\n                        <th style=\"width: 110px\" i18n=\"@@progress\">Progress</th>\n                        <th style=\"width: 110px\" i18n=\"@@postRating\">Rating</th>\n                        <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                        <th style=\"width: 110px\" i18n=\"@@enableDate\">Enable Date</th>\n                        <th style=\"width: 70px\"></th>\n                    </tr>\n                    <tr *ngFor=\"let item of pagination?.content; let index = index\" [ngClass]=\"{'alternate': 0 === index % 2}\">\n                        <td>{{item.mentorName}}</td>\n                        <td>{{item.skillName}}</td>\n                        <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                        <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                        <td>{{item.amountReceived}}</td>\n                        <td>\n                            <bar-rating [(rate)]=\"item.progress\" [max]=\"4\" [theme]=\"'movie'\" [titles]=\"['25%', '50%' , '75%', '100%']\" [showText]=\"true\" [readOnly]=\"true\"></bar-rating>\n                        </td>\n                        <td style=\"width: 30px;\">\n                            <bar-rating [(rate)]=\"item.rating\" [max]=\"5\" [titles]=\"['Poor', 'Average', 'Good', 'Very Good', 'Excellent']\" [showText]=\"true\" [readOnly]=\"true\">\n                            </bar-rating>\n                        </td>\n                        <td>\n                            <select i18n=\"@@trainingStatusList\" name=\"trainingStatus$index\" id=\"trainingStatus$index\" class=\"requiredfield\" (change)=\"getTrainingStatus($event)\">\n                              <option *ngFor=\"let trainingStatus of trainingStatusList\"\n                                 [selected]=\"trainingStatus.caption == item.status\">\n                                    {{trainingStatus.value}}\n                              </option>\n                           </select>\n                        </td>\n                        <td>\n                            <input name=\"enableDate\" id=\"enableDate\" type=\"text\" [readOnly]=\"true\" value=\"item.enableDate\" />\n                        </td>\n                        <td align=\"center\">\n                            <mat-icon (click)=\"updateTrainingStatus(index)\" i18n-title title=\"Update Training Status\" [ngStyle]=\"{'color':'green'}\">edit</mat-icon>\n                        </td>\n                    </tr>\n                    <tr *ngIf=\"pagination?.content.length == 0\">\n                        <td align=\"center\" colspan=\"9\" i18n=\"@@noData\"><b>No Data found</b></td>\n                    </tr>\n                </table>\n\n\n                <table align=\"left\" class=\"grid-box\" *ngIf=\"routePath == '/inprogressTraining' || routePath == '/completedTraining'\">\n                    <tr align=\"center\">\n                        <th style=\"width: 120px\" *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_MENTOR')\">\n                            Trainee Name\n                        </th>\n                        <th style=\"width: 120px\" *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\">\n                            Mentor Name\n                        </th>\n                        <th style=\"width: 120px\" i18n=\"@@technology\">Technology</th>\n                        <th style=\"width: 130px\" i18n=\"@@startDate&Time\">Start Date & Time</th>\n                        <th style=\"width: 130px\" i18n=\"@@endDate&Time\">End Date & Time</th>\n                        <th style=\"width: 110px\" i18n=\"@@trainingStatus\">Training Status</th>\n                        <th style=\"width: 110px\" i18n=\"@@progress\">Progress</th>\n                        <th style=\"width: 110px\" i18n=\"@@rating\">Rating</th>\n                        <th style=\"width: 110px\" i18n=\"@@feesPaid\" *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\">\n                            Fees Paid\n                        </th>\n                    </tr>\n                    <tr *ngFor=\"let item of pagination?.content; let index = index\" [ngClass]=\"{'alternate': 0 === index % 2}\">\n                        <td *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_MENTOR')\">{{item.userName}}</td>\n                        <td *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\">{{item.mentorName}}</td>\n                        <td>{{item.skillName}}</td>\n                        <td>{{item.startDate}} &nbsp; {{item.startTime}}</td>\n                        <td>{{item.endDate}} &nbsp; {{item.endTime}}</td>\n                        <td>{{item.status}}</td>\n                        <td>\n                            <bar-rating [(rate)]=\"item.progress\" [max]=\"4\" [theme]=\"'movie'\" [titles]=\"['25%', '50%' , '75%', '100%']\" [showText]=\"true\" [readOnly]=\"true\">\n                            </bar-rating>\n                        </td>\n                        <td>\n                            <bar-rating [(rate)]=\"item.rating\" [max]=\"5\" [titles]=\"['Poor', 'Average', 'Good', 'Very Good', 'Excellent']\" [showText]=\"true\" [readOnly]=\"true\">\n                            </bar-rating>\n                        </td>\n                        <td *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\">{{item.amountReceived}}</td>\n                    </tr>\n                    <tr *ngIf=\"pagination?.content.length == 0\">\n                        <td align=\"center\" colspan=\"8\" i18n=\"@@noData\" *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_USER')\"><b>No Data found</b></td>\n                        <td align=\"center\" colspan=\"7\" i18n=\"@@noData\" *ngIf=\"logedUser !=null && logedUser.role.includes('ROLE_MENTOR')\"><b>No Data found</b></td>\n                    </tr>\n                </table>\n\n            </td>\n        </tr>\n    </table>\n\n</div>\n\n<div class=\"wait\" id=\"wait\"></div>"
 
 /***/ }),
 
@@ -2647,31 +2647,46 @@ var TrainingComponent = /** @class */ (function () {
         this.router = router;
         this.trainingService = trainingService;
         this.winRef = winRef;
-        this.logedUser = JSON.parse(localStorage.getItem('logedUser'));
+        this.logedUser = JSON.parse(localStorage.getItem("logedUser"));
         this.index = 0;
         this.training = {};
         this.selectElementText = "";
         this.trainingStatusList = [
-            { caption: '', value: 'Select' },
-            { caption: 'TRAINING-STARTED', value: 'TRAINING-STARTED' },
-            { caption: 'COMPLETED', value: 'COMPLETED' }
+            { caption: "", value: "Select" },
+            { caption: "TRAINING-STARTED", value: "TRAINING-STARTED" },
+            { caption: "COMPLETED", value: "COMPLETED" },
+            { caption: "DISABLED", value: "DISABLED" }
         ];
         this.selectedPage = 0;
+        this.enableDate = '';
     }
+    TrainingComponent.prototype.ngAfterViewChecked = function () {
+        $(function () {
+            $.datepicker.setDefaults({
+                dateFormat: "yy-mm-dd"
+            });
+            $("#enableDate").datepicker({
+                minDate: 0,
+                onSelect: function (selectedDate) {
+                    var date = $(this).datepicker("getDate");
+                }
+            });
+        });
+    };
     TrainingComponent.prototype.razorPayOpen = function (amount, name) {
         var _this = this;
         var options = {
-            "key": _models_constants__WEBPACK_IMPORTED_MODULE_6__["RAZORPAY_KEY"],
-            "amount": amount,
-            "name": "SBA - IIHT & IBM",
-            "description": "Training Fees",
+            key: _models_constants__WEBPACK_IMPORTED_MODULE_6__["RAZORPAY_KEY"],
+            amount: amount,
+            name: "SBA - IIHT & IBM",
+            description: "Training Fees",
             modal: {
                 ondismiss: function () { }
             },
             prefill: {
-                "name": name,
-                "email": "iiht@gmail.com",
-                "contact": "9434580584"
+                name: name,
+                email: "iiht@gmail.com",
+                contact: "9434580584"
             },
             notes: {
                 address: ""
@@ -2680,11 +2695,12 @@ var TrainingComponent = /** @class */ (function () {
                 color: "#F37254"
             }
         };
-        options.handler = (function (response) {
+        options.handler = function (response) {
             var razorpayPaymentId = response.razorpay_payment_id;
-            alert("Successfully completed payment with Razorpay Payment Id " + razorpayPaymentId);
+            alert("Successfully completed payment with Razorpay Payment Id " +
+                razorpayPaymentId);
             _this.updatePaymentInformation(razorpayPaymentId);
-        });
+        };
         var rzp1 = new this.winRef.nativeWindow.Razorpay(options);
         rzp1.open();
     };
@@ -2692,29 +2708,29 @@ var TrainingComponent = /** @class */ (function () {
         //this.translate.setDefaultLang('en');
         //this.translate.use('en');
         this.routePath = this.router.url;
-        this.trainingStatus = this.route.data['_value']['trainingStatus'];
-        if (this.routePath == '/allTrainings') {
+        this.trainingStatus = this.route.data["_value"]["trainingStatus"];
+        if (this.routePath == "/allTrainings") {
             this.pageTitle = "All Registered Training(s)";
             this.findAllTrainings(0);
         }
-        else if (this.routePath == '/receivedProposl') {
+        else if (this.routePath == "/receivedProposl") {
             this.pageTitle = "All Proposed Training(s)";
             this.findProposedTrainings(0);
         }
         else {
-            if (this.routePath == '/finalizeProposal')
+            if (this.routePath == "/finalizeProposal")
                 this.pageTitle = "All Proposed Training(s)";
-            else if (this.routePath == '/rateMentor')
+            else if (this.routePath == "/rateMentor")
                 this.pageTitle = "Rate Mentor";
-            else if (this.routePath == '/updateTrainingStatus')
+            else if (this.routePath == "/updateTrainingStatus")
                 this.pageTitle = "Update Training Status";
-            else if (this.routePath == '/inprogressTraining')
+            else if (this.routePath == "/inprogressTraining")
                 this.pageTitle = "All In-Progress Training(s)";
-            else if (this.routePath == '/completedTraining')
+            else if (this.routePath == "/completedTraining")
                 this.pageTitle = "All Completed Training(s)";
-            if (this.logedUser.role.includes('ROLE_MENTOR'))
+            if (this.logedUser.role.includes("ROLE_MENTOR"))
                 this.findByMentorIdAndStatus(0);
-            else if (this.logedUser.role.includes('ROLE_USER'))
+            else if (this.logedUser.role.includes("ROLE_USER"))
                 this.findByUserIdAndStatus(0);
         }
         $(function () {
@@ -2763,137 +2779,145 @@ var TrainingComponent = /** @class */ (function () {
     };
     TrainingComponent.prototype.pageChanged = function (page) {
         this.selectedPage = page;
-        if (this.routePath == '/allTrainingRecord')
+        if (this.routePath == "/allTrainingRecord")
             this.findAllTrainings(page);
-        else if (this.routePath == '/receivedProposl')
+        else if (this.routePath == "/receivedProposl")
             this.findProposedTrainings(page);
         else {
-            if (this.logedUser.role.includes('ROLE_MENTOR'))
+            if (this.logedUser.role.includes("ROLE_MENTOR"))
                 this.findByMentorIdAndStatus(page);
-            else if (this.logedUser.role.includes('ROLE_USER'))
+            else if (this.logedUser.role.includes("ROLE_USER"))
                 this.findByUserIdAndStatus(page);
         }
     };
     TrainingComponent.prototype.findAllTrainings = function (pageNumber) {
         var _this = this;
-        $('#wait').show();
+        $("#wait").show();
         this.trainingService.findAllTrainings(pageNumber).subscribe(function (page) {
-            $('#wait').hide();
+            $("#wait").hide();
             _this.pagination = page;
             for (var i = 0; i < _this.pagination.content.length; i++)
                 _this.pagination.content[i].progress = _this.percentageToValue(_this.pagination.content[i].progress);
         }, function (error) {
-            $('#wait').hide();
+            $("#wait").hide();
             _this.pagination = new _models_pagination__WEBPACK_IMPORTED_MODULE_4__["Pagination"]();
             _this.pagination.content = [];
         });
     };
     TrainingComponent.prototype.findProposedTrainings = function (page) {
         var _this = this;
-        $('#wait').show();
-        this.trainingService.findProposedTrainings(this.logedUser.id, page).subscribe(function (page) {
-            $('#wait').hide();
+        $("#wait").show();
+        this.trainingService
+            .findProposedTrainings(this.logedUser.id, page)
+            .subscribe(function (page) {
+            $("#wait").hide();
             _this.pagination = page;
             for (var i = 0; i < _this.pagination.content.length; i++)
                 _this.pagination.content[i].progress = _this.percentageToValue(_this.pagination.content[i].progress);
         }, function (error) {
-            $('#wait').hide();
+            $("#wait").hide();
             _this.pagination = new _models_pagination__WEBPACK_IMPORTED_MODULE_4__["Pagination"]();
             _this.pagination.content = [];
         });
     };
     TrainingComponent.prototype.findByMentorIdAndStatus = function (page) {
         var _this = this;
-        $('#wait').show();
-        this.trainingService.findByMentorIdAndStatus(this.logedUser.id, this.trainingStatus, page).subscribe(function (page) {
-            $('#wait').hide();
+        $("#wait").show();
+        this.trainingService
+            .findByMentorIdAndStatus(this.logedUser.id, this.trainingStatus, page)
+            .subscribe(function (page) {
+            $("#wait").hide();
             _this.pagination = page;
             for (var i = 0; i < _this.pagination.content.length; i++)
                 _this.pagination.content[i].progress = _this.percentageToValue(_this.pagination.content[i].progress);
         }, function (error) {
-            $('#wait').hide();
+            $("#wait").hide();
             _this.pagination = new _models_pagination__WEBPACK_IMPORTED_MODULE_4__["Pagination"]();
             _this.pagination.content = [];
         });
     };
     TrainingComponent.prototype.findByUserIdAndStatus = function (page) {
         var _this = this;
-        $('#wait').show();
-        this.trainingService.findByUserIdAndStatus(this.logedUser.id, this.trainingStatus, page).subscribe(function (page) {
-            $('#wait').hide();
+        $("#wait").show();
+        this.trainingService
+            .findByUserIdAndStatus(this.logedUser.id, this.trainingStatus, page)
+            .subscribe(function (page) {
+            $("#wait").hide();
             _this.pagination = page;
             for (var i = 0; i < _this.pagination.content.length; i++)
                 _this.pagination.content[i].progress = _this.percentageToValue(_this.pagination.content[i].progress);
         }, function (error) {
-            $('#wait').hide();
+            $("#wait").hide();
             _this.pagination = new _models_pagination__WEBPACK_IMPORTED_MODULE_4__["Pagination"]();
             _this.pagination.content = [];
         });
     };
     TrainingComponent.prototype.approveTraining = function (index, status) {
         var _this = this;
-        $('#wait').show();
-        this.trainingService.approveTraining(this.pagination.content[index].id, status).subscribe(function (apiResponse) {
-            $('#wait').hide();
+        $("#wait").show();
+        this.trainingService
+            .approveTraining(this.pagination.content[index].id, status)
+            .subscribe(function (apiResponse) {
+            $("#wait").hide();
             alert(apiResponse.message);
             if (apiResponse.status == 200)
                 _this.findProposedTrainings(_this.selectedPage);
         }, function (error) {
-            $('#wait').hide();
+            $("#wait").hide();
         });
     };
     TrainingComponent.prototype.payFees = function (index) {
         this.index = index;
-        var amount = (this.pagination.content[index].fees * 100) + "";
+        var amount = this.pagination.content[index].fees * 100 + "";
         this.razorPayOpen(amount, this.logedUser.userName);
     };
     TrainingComponent.prototype.updatePaymentInformation = function (razorpayPaymentId) {
         var _this = this;
         this.training = {
-            "id": this.pagination.content[this.index].id,
-            "amountReceived": this.pagination.content[this.index].fees,
-            "razorpayPaymentId": razorpayPaymentId
+            id: this.pagination.content[this.index].id,
+            amountReceived: this.pagination.content[this.index].fees,
+            razorpayPaymentId: razorpayPaymentId
         };
-        $('#wait').show();
+        $("#wait").show();
         this.trainingService.updateTraining(this.training).subscribe(function (apiResponse) {
-            $('#wait').hide();
+            $("#wait").hide();
             alert(apiResponse.message);
             //if (apiResponse.status == 200)
             _this.findByUserIdAndStatus(_this.selectedPage);
         }, function (error) {
-            $('#wait').hide();
+            $("#wait").hide();
             _this.findByUserIdAndStatus(_this.selectedPage);
             //refund amount for exception
             /*let amount = (this.pagination.content[this.index].fees * 100) + "";update
-            this.trainingService.capturePayment("pay_C5ds9PgrhQadE7", amount).subscribe(
-                response => {
-                    alert(JSON.stringify(response));
-                    console.log('Status:', response.statusCode);
-                    console.log('Headers:', JSON.stringify(response.headers));
-                    console.log('Response:', response.body);
-                }, error => {
-                }
-            );
-            this.trainingService.refundMoney("pay_C5ds9PgrhQadE7").subscribe(
-                response => {
-                    alert(JSON.stringify(response));
-                    console.log('Status:', response.statusCode);
-                    console.log('Headers:', JSON.stringify(response.headers));
-                    console.log('Response:', response.body);
-                }, error => {
-                }
-            );*/
+                    this.trainingService.capturePayment("pay_C5ds9PgrhQadE7", amount).subscribe(
+                        response => {
+                            alert(JSON.stringify(response));
+                            console.log('Status:', response.statusCode);
+                            console.log('Headers:', JSON.stringify(response.headers));
+                            console.log('Response:', response.body);
+                        }, error => {
+                        }
+                    );
+                    this.trainingService.refundMoney("pay_C5ds9PgrhQadE7").subscribe(
+                        response => {
+                            alert(JSON.stringify(response));
+                            console.log('Status:', response.statusCode);
+                            console.log('Headers:', JSON.stringify(response.headers));
+                            console.log('Response:', response.body);
+                        }, error => {
+                        }
+                    );*/
         });
     };
     TrainingComponent.prototype.updateRating = function (index) {
         var _this = this;
         this.training = {
-            "id": this.pagination.content[index].id,
-            "rating": this.pagination.content[index].rating
+            id: this.pagination.content[index].id,
+            rating: this.pagination.content[index].rating
         };
-        $('#wait').show();
+        $("#wait").show();
         this.trainingService.updateTraining(this.training).subscribe(function (apiResponse) {
-            $('#wait').hide();
+            $("#wait").hide();
             if (apiResponse.status == 200) {
                 alert("Rate poseted successfully");
                 _this.findByUserIdAndStatus(_this.selectedPage);
@@ -2901,11 +2925,12 @@ var TrainingComponent = /** @class */ (function () {
             else
                 alert(apiResponse.message);
         }, function (error) {
-            $('#wait').hide();
+            $("#wait").hide();
         });
     };
     TrainingComponent.prototype.getTrainingStatus = function (event) {
-        this.selectElementText = event.target['options'][event.target['options'].selectedIndex].text;
+        this.selectElementText =
+            event.target["options"][event.target["options"].selectedIndex].text;
     };
     TrainingComponent.prototype.updateTrainingStatus = function (index) {
         var _this = this;
@@ -2914,22 +2939,24 @@ var TrainingComponent = /** @class */ (function () {
             return;
         }
         this.training = {
-            "id": this.pagination.content[index].id,
-            "status": this.selectElementText
+            id: this.pagination.content[index].id,
+            status: this.selectElementText,
+            enableDate: this.pagination.content[index].enableDate
         };
-        $('#wait').show();
+        console.log("Enable Date: " + this.enableDate);
+        $("#wait").show();
         this.trainingService.updateTraining(this.training).subscribe(function (apiResponse) {
-            $('#wait').hide();
+            $("#wait").hide();
             alert(apiResponse.message);
             if (apiResponse.status == 200)
                 _this.findByUserIdAndStatus(_this.selectedPage);
         }, function (error) {
-            $('#wait').hide();
+            $("#wait").hide();
         });
     };
     TrainingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-training',
+            selector: "app-training",
             template: __webpack_require__(/*! ./training.component.html */ "./src/app/training/training.component.html")
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
