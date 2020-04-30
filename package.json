@@ -32,7 +32,7 @@
         "bootstrap": "^4.2.1",
         "core-js": "^2.5.4",
         "fullcalendar": "^3.6.1",
-        "jquery": "^3.3.1",
+        "jquery": "^3.5.0",
         "material-icons": "^0.3.0",
         "ng-fullcalendar": "^1.7.1",
         "ngx-bar-rating": "^1.1.0",
